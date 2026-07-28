@@ -1,0 +1,3984 @@
+{
+  "municipality": "Vargem Grande do Sul",
+  "generatedAt": "2026-07-28",
+  "categories": [
+    {
+      "id": "fpm",
+      "name": "FPM",
+      "origin": "União",
+      "risk": "Médio",
+      "macro": "PIB nacional e arrecadação de IR/IPI"
+    },
+    {
+      "id": "itr",
+      "name": "ITR",
+      "origin": "União",
+      "risk": "Médio",
+      "macro": "Atividade agropecuária e valores de terra"
+    },
+    {
+      "id": "comp_fin",
+      "name": "Compensações Financeiras",
+      "origin": "União",
+      "risk": "Alto",
+      "macro": "Produção e preços de recursos naturais"
+    },
+    {
+      "id": "sus",
+      "name": "SUS",
+      "origin": "União",
+      "risk": "Baixo",
+      "macro": "Política federal de saúde e IPCA"
+    },
+    {
+      "id": "fnde",
+      "name": "FNDE",
+      "origin": "União",
+      "risk": "Baixo",
+      "macro": "Matrículas, programas educacionais e IPCA"
+    },
+    {
+      "id": "cide",
+      "name": "CIDE",
+      "origin": "União",
+      "risk": "Alto",
+      "macro": "Combustíveis e atividade econômica"
+    },
+    {
+      "id": "lc176",
+      "name": "LC 176",
+      "origin": "União",
+      "risk": "Médio",
+      "macro": "Cronograma legal de compensações"
+    },
+    {
+      "id": "royalties",
+      "name": "Royalties",
+      "origin": "União",
+      "risk": "Alto",
+      "macro": "Petróleo, gás e câmbio"
+    },
+    {
+      "id": "icms",
+      "name": "ICMS",
+      "origin": "Estado",
+      "risk": "Alto",
+      "macro": "Consumo das famílias e atividade estadual"
+    },
+    {
+      "id": "ipva",
+      "name": "IPVA",
+      "origin": "Estado",
+      "risk": "Baixo",
+      "macro": "Frota, venda e valor de veículos"
+    },
+    {
+      "id": "ipi",
+      "name": "IPI Exportação",
+      "origin": "Estado",
+      "risk": "Médio",
+      "macro": "Produção industrial e exportações"
+    },
+    {
+      "id": "convenios_est",
+      "name": "Convênios estaduais",
+      "origin": "Estado",
+      "risk": "Alto",
+      "macro": "Carteira de convênios e execução de obras"
+    },
+    {
+      "id": "outras_est",
+      "name": "Outras transferências",
+      "origin": "Estado",
+      "risk": "Médio",
+      "macro": "Políticas e programas estaduais"
+    }
+  ],
+  "records": [
+    {
+      "year": 2023,
+      "month": 1,
+      "category": "fpm",
+      "value": 2914772.89,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "category": "itr",
+      "value": 2373.69,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "category": "comp_fin",
+      "value": 36975.92,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "category": "sus",
+      "value": 633191.05,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "category": "fnde",
+      "value": 469126.92,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "category": "cide",
+      "value": 252.64,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "category": "icms",
+      "value": 2375827.66,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "category": "ipva",
+      "value": 4052831.61,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "category": "ipi",
+      "value": 12725.17,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "category": "convenios_est",
+      "value": 160466.76,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "category": "outras_est",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "category": "fpm",
+      "value": 3885749.6,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "category": "itr",
+      "value": 648.36,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "category": "comp_fin",
+      "value": 36472.57,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "category": "sus",
+      "value": 698946.48,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "category": "fnde",
+      "value": 330297.95,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "category": "icms",
+      "value": 1779630.96,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "category": "ipva",
+      "value": 910254.78,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "category": "ipi",
+      "value": 9685.89,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "category": "convenios_est",
+      "value": 160921.3,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "category": "outras_est",
+      "value": 34720.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "category": "fpm",
+      "value": 2377091.29,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "category": "itr",
+      "value": 224.46,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "category": "comp_fin",
+      "value": 39428.53,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "category": "sus",
+      "value": 747317.06,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "category": "fnde",
+      "value": 354747.27,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "category": "icms",
+      "value": 1895232.38,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "category": "ipva",
+      "value": 884854.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "category": "ipi",
+      "value": 9842.34,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "category": "convenios_est",
+      "value": 144549.15,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "category": "outras_est",
+      "value": 47627.06,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "category": "fpm",
+      "value": 2717757.15,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "category": "itr",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "category": "comp_fin",
+      "value": 844517.78,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "category": "sus",
+      "value": 674302.56,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "category": "fnde",
+      "value": 354781.04,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "category": "icms",
+      "value": 1373235.58,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "category": "ipva",
+      "value": 611805.73,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "category": "ipi",
+      "value": 11644.03,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "category": "convenios_est",
+      "value": 136635.72,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "category": "outras_est",
+      "value": 15872.92,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "category": "fpm",
+      "value": 3021223.4,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "category": "itr",
+      "value": 26.98,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "category": "comp_fin",
+      "value": 41515.93,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "category": "sus",
+      "value": 767689.91,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "category": "fnde",
+      "value": 357704.7,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "category": "icms",
+      "value": 2804330.31,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "category": "ipva",
+      "value": 577350.37,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "category": "ipi",
+      "value": 10745.94,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "category": "convenios_est",
+      "value": 570312.05,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "category": "outras_est",
+      "value": 30868.16,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "category": "fpm",
+      "value": 2821800.02,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "category": "itr",
+      "value": 21.94,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "category": "comp_fin",
+      "value": 41136.91,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "category": "sus",
+      "value": 1013921.76,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "category": "fnde",
+      "value": 350700.25,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "category": "icms",
+      "value": 1746438.33,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "category": "ipva",
+      "value": 199644.82,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "category": "ipi",
+      "value": 12179.68,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "category": "convenios_est",
+      "value": 2111830.3,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "category": "outras_est",
+      "value": 15872.92,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "category": "fpm",
+      "value": 3876966.34,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "category": "itr",
+      "value": 100.41,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "category": "comp_fin",
+      "value": 6942.52,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "category": "sus",
+      "value": 1354936.11,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "category": "fnde",
+      "value": 368870.99,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "category": "icms",
+      "value": 1955919.85,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "category": "ipva",
+      "value": 224920.04,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "category": "ipi",
+      "value": 12562.9,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "category": "convenios_est",
+      "value": 459019.69,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "category": "outras_est",
+      "value": 19866.81,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "category": "fpm",
+      "value": 2407127.92,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "category": "itr",
+      "value": 1225.11,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "category": "comp_fin",
+      "value": 31663.74,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "category": "sus",
+      "value": 930524.02,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "category": "fnde",
+      "value": 355201.4,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "category": "icms",
+      "value": 1310349.56,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "category": "ipva",
+      "value": 239703.23,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "category": "ipi",
+      "value": 10479.92,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "category": "convenios_est",
+      "value": 444543.19,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "category": "outras_est",
+      "value": 15872.92,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "category": "fpm",
+      "value": 2543341.56,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "category": "itr",
+      "value": 19184.92,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "category": "comp_fin",
+      "value": 44848.26,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "category": "sus",
+      "value": 866899.58,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "category": "fnde",
+      "value": 356740.05,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "category": "icms",
+      "value": 2920803.24,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "category": "ipva",
+      "value": 244232.18,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "category": "ipi",
+      "value": 11156.13,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "category": "convenios_est",
+      "value": 213633.56,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "category": "outras_est",
+      "value": 115872.92,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "category": "fpm",
+      "value": 2279018.95,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "category": "itr",
+      "value": 90678.01,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "category": "comp_fin",
+      "value": 41803.17,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "category": "sus",
+      "value": 978566.81,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "category": "fnde",
+      "value": 353847.12,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "category": "cide",
+      "value": 7611.83,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "category": "icms",
+      "value": 2404131.22,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "category": "ipva",
+      "value": 200193.63,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "category": "ipi",
+      "value": 16106.28,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "category": "convenios_est",
+      "value": 1477449.99,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "category": "outras_est",
+      "value": 25451.45,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "category": "fpm",
+      "value": 2956946.05,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "category": "itr",
+      "value": 4594.21,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "category": "comp_fin",
+      "value": 41030.55,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "category": "sus",
+      "value": 1187500.07,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "category": "fnde",
+      "value": 613949.89,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "category": "icms",
+      "value": 1872722.99,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "category": "ipva",
+      "value": 211488.27,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "category": "ipi",
+      "value": 12258.86,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "category": "convenios_est",
+      "value": 951908.93,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "category": "outras_est",
+      "value": 115872.92,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "category": "fpm",
+      "value": 5056442.9,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "category": "itr",
+      "value": 2386.33,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "category": "comp_fin",
+      "value": 65858.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "category": "sus",
+      "value": 1242783.12,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "category": "fnde",
+      "value": 310018.94,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "category": "icms",
+      "value": 2206700.67,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "category": "ipva",
+      "value": 278574.56,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "category": "ipi",
+      "value": 10512.79,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "category": "convenios_est",
+      "value": 298503.33,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "category": "outras_est",
+      "value": 15872.96,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "category": "fpm",
+      "value": 3245724.51,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "category": "itr",
+      "value": 2372.71,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "category": "comp_fin",
+      "value": 37445.94,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "category": "sus",
+      "value": 845284.29,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "category": "fnde",
+      "value": 542885.63,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "category": "cide",
+      "value": 12192.93,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "category": "icms",
+      "value": 2255232.89,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "category": "ipva",
+      "value": 4064175.41,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "category": "ipi",
+      "value": 17426.3,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "category": "convenios_est",
+      "value": 5355.63,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "category": "outras_est",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "category": "fpm",
+      "value": 4413377.02,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "category": "itr",
+      "value": 75.86,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "category": "comp_fin",
+      "value": 68045.8,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "category": "sus",
+      "value": 755607.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "category": "fnde",
+      "value": 215534.85,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "category": "icms",
+      "value": 1719611.46,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "category": "ipva",
+      "value": 1011047.02,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "category": "ipi",
+      "value": 11538.55,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "category": "convenios_est",
+      "value": 627090.8,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "category": "outras_est",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "category": "fpm",
+      "value": 2751498.56,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "category": "itr",
+      "value": 103.41,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "category": "comp_fin",
+      "value": 38961.26,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "category": "sus",
+      "value": 1139008.16,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "category": "fnde",
+      "value": 207718.31,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "category": "icms",
+      "value": 1926770.12,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "category": "ipva",
+      "value": 812335.47,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "category": "ipi",
+      "value": 12405.97,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "category": "convenios_est",
+      "value": 191308.46,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "category": "outras_est",
+      "value": 47620.94,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "category": "fpm",
+      "value": 2885919.61,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "category": "itr",
+      "value": 159.8,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "category": "comp_fin",
+      "value": 37483.15,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "category": "sus",
+      "value": 953239.45,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "category": "fnde",
+      "value": 226239.28,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "category": "cide",
+      "value": 11791.33,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "category": "icms",
+      "value": 2340441.86,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "category": "ipva",
+      "value": 751429.51,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "category": "ipi",
+      "value": 16971.93,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "category": "convenios_est",
+      "value": 670758.8,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "category": "outras_est",
+      "value": 7730.69,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "category": "fpm",
+      "value": 3357399.59,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "category": "itr",
+      "value": 64.07,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "category": "comp_fin",
+      "value": 676956.03,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "category": "sus",
+      "value": 1040068.93,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "category": "fnde",
+      "value": 466754.35,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "category": "icms",
+      "value": 1840849.43,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "category": "ipva",
+      "value": 658370.07,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "category": "ipi",
+      "value": 12654.71,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "category": "convenios_est",
+      "value": 1086830.29,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "category": "outras_est",
+      "value": 24016.51,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "category": "fpm",
+      "value": 3605287.35,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "category": "itr",
+      "value": 376.99,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "category": "comp_fin",
+      "value": 34679.29,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "category": "sus",
+      "value": 1614849.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "category": "fnde",
+      "value": 204827.38,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "category": "icms",
+      "value": 2083839.56,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "category": "ipva",
+      "value": 213602.31,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "category": "ipi",
+      "value": 16025.02,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "category": "convenios_est",
+      "value": 302678.51,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "category": "outras_est",
+      "value": 15873.6,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "category": "fpm",
+      "value": 4299173.85,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "category": "itr",
+      "value": 46.81,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "category": "comp_fin",
+      "value": 40710.07,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "category": "sus",
+      "value": 934197.58,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "category": "fnde",
+      "value": 215016.2,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "category": "cide",
+      "value": 11440.24,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "category": "icms",
+      "value": 1925180.99,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "category": "ipva",
+      "value": 247842.03,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "category": "ipi",
+      "value": 17989.55,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "category": "convenios_est",
+      "value": 657025.03,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "category": "outras_est",
+      "value": 31425.73,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "category": "fpm",
+      "value": 3056055.12,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "category": "itr",
+      "value": 1101.84,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "category": "comp_fin",
+      "value": 40394.75,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "category": "sus",
+      "value": 950336.6,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "category": "fnde",
+      "value": 239944.54,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "category": "icms",
+      "value": 2480725.03,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "category": "ipva",
+      "value": 279891.34,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "category": "ipi",
+      "value": 19414.27,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "category": "convenios_est",
+      "value": 536363.98,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "category": "outras_est",
+      "value": 15873.6,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "category": "fpm",
+      "value": 3353778.84,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "category": "itr",
+      "value": 22763.03,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "category": "comp_fin",
+      "value": 46688.67,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "category": "sus",
+      "value": 981566.73,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "category": "fnde",
+      "value": 353466.28,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "category": "icms",
+      "value": 1526441.49,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "category": "ipva",
+      "value": 245712.72,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "category": "ipi",
+      "value": 16237.48,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "category": "convenios_est",
+      "value": 1082195.9,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "category": "outras_est",
+      "value": 856100.28,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "category": "fpm",
+      "value": 2662072.86,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "category": "itr",
+      "value": 131500.68,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "category": "comp_fin",
+      "value": 40764.92,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "category": "sus",
+      "value": 834160.31,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "category": "fnde",
+      "value": 147829.69,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "category": "cide",
+      "value": 19000.31,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "category": "icms",
+      "value": 3013745.76,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "category": "ipva",
+      "value": 252616.99,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "category": "ipi",
+      "value": 22721.99,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "category": "convenios_est",
+      "value": 596508.19,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "category": "outras_est",
+      "value": 315873.6,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "category": "fpm",
+      "value": 3407574.8,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "category": "itr",
+      "value": 4077.76,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "category": "comp_fin",
+      "value": 120075.16,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "category": "sus",
+      "value": 923503.2,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "category": "fnde",
+      "value": 154773.4,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "category": "icms",
+      "value": 2142291.06,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "category": "ipva",
+      "value": 212661.07,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "category": "ipi",
+      "value": 16303.96,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "category": "convenios_est",
+      "value": 182195.9,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "category": "outras_est",
+      "value": 719950.93,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "category": "fpm",
+      "value": 5914861.11,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "category": "itr",
+      "value": 11048.12,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "category": "comp_fin",
+      "value": 16642.58,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "category": "sus",
+      "value": 1797479.24,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "category": "fnde",
+      "value": 162315.18,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "category": "icms",
+      "value": 2666013.61,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "category": "ipva",
+      "value": 229422.12,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "category": "ipi",
+      "value": 22389.13,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "category": "convenios_est",
+      "value": 182195.9,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "category": "outras_est",
+      "value": 79542.79,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "category": "fpm",
+      "value": 3447701.45,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "category": "itr",
+      "value": 1952.35,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "category": "comp_fin",
+      "value": 1362690.15,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "category": "sus",
+      "value": 916241.07,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "category": "fnde",
+      "value": 284631.99,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "category": "cide",
+      "value": 12567.05,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "category": "icms",
+      "value": 2051890.99,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "category": "ipva",
+      "value": 4328957.84,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "category": "ipi",
+      "value": 12974.62,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "category": "convenios_est",
+      "value": 673593.22,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "category": "outras_est",
+      "value": 19560.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "category": "fpm",
+      "value": 4626417.24,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "category": "itr",
+      "value": 3306.41,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "category": "comp_fin",
+      "value": 1377662.09,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "category": "sus",
+      "value": 944513.88,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "category": "fnde",
+      "value": 253026.37,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "category": "icms",
+      "value": 2188055.88,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "category": "ipva",
+      "value": 1070152.28,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "category": "ipi",
+      "value": 15064.18,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "category": "convenios_est",
+      "value": 382994.67,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "category": "outras_est",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "category": "fpm",
+      "value": 3046989.33,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "category": "itr",
+      "value": 311.98,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "category": "comp_fin",
+      "value": 1142172.34,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "category": "sus",
+      "value": 895436.32,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "category": "fnde",
+      "value": 252697.8,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "category": "icms",
+      "value": 2235612.19,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "category": "ipva",
+      "value": 908443.24,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "category": "ipi",
+      "value": 17377.27,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "category": "convenios_est",
+      "value": 309502.95,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "category": "outras_est",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "category": "fpm",
+      "value": 3095975.85,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "category": "itr",
+      "value": 1780.61,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "category": "comp_fin",
+      "value": 726188.19,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "category": "sus",
+      "value": 792307.47,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "category": "fnde",
+      "value": 272638.02,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "category": "cide",
+      "value": 11562.31,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "category": "icms",
+      "value": 2407816.68,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "category": "ipva",
+      "value": 780380.98,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "category": "ipi",
+      "value": 18510.31,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "category": "convenios_est",
+      "value": 356380.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "category": "outras_est",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "category": "fpm",
+      "value": 3949356.14,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "category": "itr",
+      "value": 221.01,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "category": "comp_fin",
+      "value": 549172.91,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "category": "sus",
+      "value": 967339.84,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "category": "fnde",
+      "value": 250674.92,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "category": "icms",
+      "value": 2228943.65,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "category": "ipva",
+      "value": 694633.93,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "category": "ipi",
+      "value": 14687.42,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "category": "convenios_est",
+      "value": 610978.89,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "category": "outras_est",
+      "value": 727915.31,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "category": "fpm",
+      "value": 4056531.36,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "category": "itr",
+      "value": 403.92,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "category": "comp_fin",
+      "value": 191711.59,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "category": "sus",
+      "value": 997209.38,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "category": "fnde",
+      "value": 255850.41,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "category": "icms",
+      "value": 1689542.7,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "category": "ipva",
+      "value": 211916.5,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "category": "ipi",
+      "value": 18907.98,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "category": "convenios_est",
+      "value": 900036.4,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "category": "outras_est",
+      "value": 15873.61,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "category": "fpm",
+      "value": 4707044.89,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "category": "itr",
+      "value": 2104.26,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "category": "comp_fin",
+      "value": 150804.49,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "category": "sus",
+      "value": 1254220.86,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "category": "fnde",
+      "value": 261726.1,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "category": "cide",
+      "value": 12718.36,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "category": "icms",
+      "value": 3059128.4,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "category": "ipva",
+      "value": 297314.35,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "category": "ipi",
+      "value": 17468.05,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "category": "convenios_est",
+      "value": 345413.77,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "category": "outras_est",
+      "value": 15873.61,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "category": "fpm",
+      "value": 2948937.5,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "category": "itr",
+      "value": 2411.06,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "category": "comp_fin",
+      "value": 81433.4,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "category": "sus",
+      "value": 947235.49,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "category": "fnde",
+      "value": 246179.96,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "category": "icms",
+      "value": 2257265.47,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "category": "ipva",
+      "value": 310979.15,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "category": "ipi",
+      "value": 15431.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "category": "convenios_est",
+      "value": 505307.7,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "category": "outras_est",
+      "value": 80995.61,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "category": "fpm",
+      "value": 4884633.38,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "category": "itr",
+      "value": 17898.36,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "category": "comp_fin",
+      "value": 93892.61,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "category": "sus",
+      "value": 896969.04,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "category": "fnde",
+      "value": 235691.82,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "category": "icms",
+      "value": 2725615.95,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "category": "ipva",
+      "value": 282773.21,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "category": "ipi",
+      "value": 18786.7,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "category": "convenios_est",
+      "value": 594673.02,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "category": "outras_est",
+      "value": 936145.32,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "category": "fpm",
+      "value": 2796197.71,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "category": "itr",
+      "value": 169574.68,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "category": "comp_fin",
+      "value": 85056.27,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "category": "sus",
+      "value": 1163069.39,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "category": "fnde",
+      "value": 180686.43,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "category": "cide",
+      "value": 13411.71,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "category": "icms",
+      "value": 2246056.17,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "category": "ipva",
+      "value": 269761.65,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "category": "ipi",
+      "value": 18717.07,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "category": "convenios_est",
+      "value": 754335.86,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "category": "outras_est",
+      "value": 54152.15,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "category": "fpm",
+      "value": 3800982.61,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "category": "itr",
+      "value": 1334.78,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "category": "comp_fin",
+      "value": 390130.3,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "category": "sus",
+      "value": 1026040.22,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "category": "fnde",
+      "value": 171287.12,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "category": "icms",
+      "value": 2069326.74,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "category": "ipva",
+      "value": 169856.68,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "category": "ipi",
+      "value": 17225.76,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "category": "convenios_est",
+      "value": 186393.16,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "category": "outras_est",
+      "value": 58229.49,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "category": "fpm",
+      "value": 6578684.97,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "category": "itr",
+      "value": 2751.05,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "category": "comp_fin",
+      "value": 254950.46,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "category": "sus",
+      "value": 1439321.17,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "category": "fnde",
+      "value": 200556.66,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "category": "cide",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "category": "lc176",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "category": "icms",
+      "value": 3244054.72,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "category": "ipva",
+      "value": 325473.98,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "category": "ipi",
+      "value": 19786.96,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "category": "convenios_est",
+      "value": 1678476.45,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "category": "outras_est",
+      "value": 87629.56,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "category": "fpm",
+      "value": 3981308.28,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "category": "itr",
+      "value": 1274.68,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "category": "comp_fin",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "category": "sus",
+      "value": 1574415.86,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "category": "fnde",
+      "value": 292205.82,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "category": "cide",
+      "value": 4387.22,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "category": "lc176",
+      "value": 7425.63,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "category": "icms",
+      "value": 2332816.99,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "category": "ipva",
+      "value": 1402405.7,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "category": "ipi",
+      "value": 17593.58,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "category": "convenios_est",
+      "value": 799284.23,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "category": "outras_est",
+      "value": 271065.31,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "category": "fpm",
+      "value": 3981308.28,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "category": "itr",
+      "value": 1274.68,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "category": "comp_fin",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "category": "sus",
+      "value": 1574415.86,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "category": "fnde",
+      "value": 292205.82,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "category": "cide",
+      "value": 4387.22,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "category": "lc176",
+      "value": 7425.63,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "category": "icms",
+      "value": 2332816.99,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "category": "ipva",
+      "value": 1402405.7,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "category": "ipi",
+      "value": 17593.58,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "category": "convenios_est",
+      "value": 799284.23,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "category": "outras_est",
+      "value": 271065.31,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 3,
+      "category": "fpm",
+      "value": 3981308.28,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 3,
+      "category": "itr",
+      "value": 1274.68,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 3,
+      "category": "comp_fin",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 3,
+      "category": "sus",
+      "value": 1574415.86,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 3,
+      "category": "fnde",
+      "value": 292205.82,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 3,
+      "category": "cide",
+      "value": 4387.22,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 3,
+      "category": "lc176",
+      "value": 7425.63,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 3,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 3,
+      "category": "icms",
+      "value": 2332816.99,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 3,
+      "category": "ipva",
+      "value": 1402405.7,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 3,
+      "category": "ipi",
+      "value": 17593.58,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 3,
+      "category": "convenios_est",
+      "value": 799284.23,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 3,
+      "category": "outras_est",
+      "value": 271065.31,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 4,
+      "category": "fpm",
+      "value": 3981308.28,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 4,
+      "category": "itr",
+      "value": 1274.68,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 4,
+      "category": "comp_fin",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 4,
+      "category": "sus",
+      "value": 1574415.86,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 4,
+      "category": "fnde",
+      "value": 292205.82,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 4,
+      "category": "cide",
+      "value": 4387.22,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 4,
+      "category": "lc176",
+      "value": 7425.63,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 4,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 4,
+      "category": "icms",
+      "value": 2332816.99,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 4,
+      "category": "ipva",
+      "value": 1402405.7,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 4,
+      "category": "ipi",
+      "value": 17593.58,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 4,
+      "category": "convenios_est",
+      "value": 799284.23,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 4,
+      "category": "outras_est",
+      "value": 271065.31,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "category": "fpm",
+      "value": 3981308.28,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "category": "itr",
+      "value": 1274.68,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "category": "comp_fin",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "category": "sus",
+      "value": 1574415.86,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "category": "fnde",
+      "value": 292205.82,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "category": "cide",
+      "value": 4387.22,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "category": "lc176",
+      "value": 7425.63,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "category": "icms",
+      "value": 2332816.99,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "category": "ipva",
+      "value": 1402405.7,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "category": "ipi",
+      "value": 17593.58,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "category": "convenios_est",
+      "value": 799284.23,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "category": "outras_est",
+      "value": 271065.31,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "category": "fpm",
+      "value": 3981308.28,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "category": "itr",
+      "value": 1274.68,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "category": "comp_fin",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "category": "sus",
+      "value": 1574415.86,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "category": "fnde",
+      "value": 292205.82,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "category": "cide",
+      "value": 4387.22,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "category": "lc176",
+      "value": 7425.63,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "category": "royalties",
+      "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "category": "icms",
+      "value": 2332816.99,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "category": "ipva",
+      "value": 1402405.7,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "category": "ipi",
+      "value": 17593.58,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "category": "convenios_est",
+      "value": 799284.23,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "category": "outras_est",
+      "value": 271065.31,
+      "status": "realizado"
+    }
+  ],
+  "sources": [
+    {
+      "year": 2023,
+      "file": "receitas-vargem-grande-do-sul-2023.csv",
+      "coverage": "jan-dez",
+      "method": "lançamentos detalhados mensais; valores líquidos das deduções do Fundeb"
+    },
+    {
+      "year": 2024,
+      "file": "receitas-vargem-grande-do-sul-2024.csv",
+      "coverage": "jan-dez",
+      "method": "lançamentos detalhados mensais; valores líquidos das deduções do Fundeb"
+    },
+    {
+      "year": 2025,
+      "file": "receitas-vargem-grande-do-sul-2025.csv",
+      "coverage": "jan-dez",
+      "method": "lançamentos detalhados mensais; valores líquidos das deduções do Fundeb"
+    },
+    {
+      "year": 2026,
+      "file": "ATE JUN 26.pdf",
+      "coverage": "jan-jun",
+      "method": "totais acumulados do balancete; rateio mensal uniforme apenas para visualização"
+    }
+  ],
+  "missingYears": [
+    2022
+  ],
+  "defaults": {
+    "pessimista": {
+      "fpm": -3,
+      "icms": -5,
+      "ipva": -2,
+      "ipi": -3,
+      "sus": 0,
+      "fnde": 0,
+      "default": -2
+    },
+    "realista": {
+      "fpm": 4,
+      "icms": 3,
+      "ipva": 5,
+      "ipi": 3,
+      "sus": 2,
+      "fnde": 3,
+      "default": 3
+    },
+    "otimista": {
+      "fpm": 8,
+      "icms": 7,
+      "ipva": 8,
+      "ipi": 7,
+      "sus": 5,
+      "fnde": 5,
+      "default": 6
+    }
+  },
+  "assumptions": {
+    "base2026": "Executado até junho anualizado por sazonalidade média de 2023-2025; fallback: multiplicação por 2.",
+    "historical": "2022 aparece como indisponível porque não foi fornecido arquivo-fonte.",
+    "values": "Valores de transferências líquidos das deduções do Fundeb quando identificadas."
+  }
+}

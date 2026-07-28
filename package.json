@@ -1,0 +1,22 @@
+{
+  "name": "observatorio-receitas-vgs",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "data": "python scripts/build_data.py",
+    "dev": "vite",
+    "build": "vite build",
+    "build:all": "npm run data && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.4.1",
+    "vite": "^6.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "recharts": "^2.15.1",
+    "lucide-react": "^0.468.0"
+  },
+  "devDependencies": {}
+}
