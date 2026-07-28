@@ -3,7 +3,8 @@ import { createRoot } from "react-dom/client";
 import {
   AlertTriangle, ArrowDownRight, ArrowUpRight, BarChart3, Building2, CheckCircle2,
   ChevronDown, CircleDollarSign, Download, FileText, Gauge, Info, Landmark,
-  Menu, RefreshCw, ShieldAlert, SlidersHorizontal, Target, TrendingUp, X
+  Layers3, Menu, Plus, RefreshCw, Search, ShieldAlert, SlidersHorizontal, Target,
+  Trash2, TrendingUp, X
 } from "lucide-react";
 import {
   Area, AreaChart, Bar, BarChart, CartesianGrid, Cell, ComposedChart, Legend,
@@ -33,10 +34,12 @@ function App() {
   const [scenario, setScenario] = useState("realista");
   const [rates, setRates] = useState(null);
   const [drawer, setDrawer] = useState(false);
+  const [study, setStudy] = useState(() => JSON.parse(localStorage.getItem("revenue-study") || "[]"));
 
   useEffect(() => { fetch(`${import.meta.env.BASE_URL}data/revenues.json`).then(r => r.json()).then(d => {
     setData(d); setRates(structuredClone(d.defaults));
   }); }, []);
+  useEffect(() => localStorage.setItem("revenue-study", JSON.stringify(study)), [study]);
 
   const model = useMemo(() => {
     if (!data || !rates) return null;
@@ -92,6 +95,7 @@ function App() {
   const nav = [
     ["visao","Visão executiva",Gauge], ["historico","Histórico",BarChart3],
     ["cenarios","Cenários 2027",SlidersHorizontal], ["risco","Risco & alertas",ShieldAlert],
+    ["detalhes","Receitas detalhadas",Layers3], ["estudos",`Meus estudos${study.length?` (${study.length})`:""}`,Search],
     ["metodo","Metodologia",FileText]
   ];
 
@@ -119,9 +123,75 @@ function App() {
       {tab==="historico" && <Historical model={model} years={years}/>}
       {tab==="cenarios" && <Scenarios model={model} rates={rates} setRates={setRates} scenario={scenario} setScenario={setScenario}/>}
       {tab==="risco" && <Risk model={model}/>}
+      {tab==="detalhes" && <Detailed data={data} study={study} setStudy={setStudy} setTab={setTab}/>}
+      {tab==="estudos" && <Studies data={data} study={study} setStudy={setStudy} setTab={setTab}/>}
       {tab==="metodo" && <Method data={data}/>}
     </main>
   </div>;
+}
+
+function Detailed({data,study,setStudy,setTab}) {
+  const [query,setQuery]=useState("");
+  const [theme,setTheme]=useState("Todos");
+  const [detailOrigin,setDetailOrigin]=useState("Todas");
+  const [year,setYear]=useState("Todos");
+  const themes=["Todos",...new Set(data.detailItems.map(i=>i.theme))];
+  const origins=["Todas",...new Set(data.detailItems.map(i=>i.origin))];
+  const totals=useMemo(()=>{
+    const out={};
+    for(const r of data.detailRecords) if(year==="Todos"||r.year===+year) out[r.item]=(out[r.item]||0)+r.value;
+    return out;
+  },[data,year]);
+  const rows=data.detailItems.filter(i=>{
+    const hay=`${i.code} ${i.name} ${i.theme} ${i.application} ${i.applicationDetail} ${i.agency}`.toLowerCase();
+    return (theme==="Todos"||i.theme===theme)&&(detailOrigin==="Todas"||i.origin===detailOrigin)&&(!query||hay.includes(query.toLowerCase()));
+  }).map(i=>({...i,total:totals[i.id]||0})).sort((a,b)=>Math.abs(b.total)-Math.abs(a.total));
+  const toggle=id=>setStudy(s=>s.includes(id)?s.filter(x=>x!==id):[...s,id]);
+  const themeTotals=[...new Set(data.detailItems.map(i=>i.theme))].map(t=>({name:t,value:rows.filter(r=>r.theme===t).reduce((a,r)=>a+r.total,0),count:rows.filter(r=>r.theme===t).length})).sort((a,b)=>b.value-a.value);
+  return <div className="page">
+    <div className="detail-hero"><div><span>215 RUBRICAS MAPEADAS</span><h2>Explorador de receitas</h2><p>Do grupo contábil ao programa, aplicação e órgão arrecadador.</p></div><button onClick={()=>setTab("estudos")}><Search/> Abrir estudo <b>{study.length}</b></button></div>
+    <div className="detail-summary">{themeTotals.slice(0,5).map(t=><div key={t.name}><span>{t.name}</span><strong>{compact.format(t.value)}</strong><small>{t.count} rubricas visíveis</small></div>)}</div>
+    <Card title="Fragmentação completa" subtitle="Use os filtros, pesquise uma rubrica e adicione-a ao seu estudo">
+      <div className="detail-filters">
+        <label className="searchbox"><Search/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Buscar IPTU, SUAS, convênio, fundo, aplicação..."/></label>
+        <select value={theme} onChange={e=>setTheme(e.target.value)}>{themes.map(t=><option key={t}>{t}</option>)}</select>
+        <select value={detailOrigin} onChange={e=>setDetailOrigin(e.target.value)}>{origins.map(o=><option key={o}>{o}</option>)}</select>
+        <select value={year} onChange={e=>setYear(e.target.value)}><option>Todos</option>{[2023,2024,2025].map(y=><option key={y}>{y}</option>)}</select>
+      </div>
+      <div className="results-line"><strong>{rows.length}</strong> rubricas encontradas <span>·</span> {brl.format(rows.reduce((a,r)=>a+r.total,0))}</div>
+      <div className="table-wrap detail-table"><table><thead><tr><th>Estudo</th><th>Código / receita</th><th>Segmento</th><th>Origem</th><th>Aplicação</th><th>Órgão</th><th>Valor</th></tr></thead>
+      <tbody>{rows.map(r=><tr key={r.id} className={study.includes(r.id)?"selected-row":""}><td><button className={`study-add ${study.includes(r.id)?"added":""}`} onClick={()=>toggle(r.id)}>{study.includes(r.id)?<CheckCircle2/>:<Plus/>}</button></td><td><small className="account-code">{r.code}</small><strong>{r.name}</strong></td><td><span className="theme-pill">{r.theme}</span></td><td>{r.origin}</td><td className="wrap-cell">{r.applicationDetail&&!r.applicationDetail.startsWith("CÓDIGO")?r.applicationDetail:r.application}</td><td className="wrap-cell">{r.agency}</td><td><strong>{brl.format(r.total)}</strong></td></tr>)}</tbody></table></div>
+    </Card>
+  </div>
+}
+
+function Studies({data,study,setStudy,setTab}) {
+  const items=study.map(id=>data.detailItems.find(i=>i.id===id)).filter(Boolean);
+  const annual=[2023,2024,2025].map(year=>({year:String(year),...Object.fromEntries(items.map(i=>[i.id,sum(data.detailRecords.filter(r=>r.item===i.id&&r.year===year))]))}));
+  const monthly=months.map((month,idx)=>({
+    month,
+    ...Object.fromEntries(items.map(i=>[
+      i.id,
+      sum(data.detailRecords.filter(r=>r.item===i.id&&r.month===idx+1))
+    ]))
+  }));
+  const palette=["#167c69","#d6a944","#d86751","#527cba","#8659a8","#4ca8a0","#b46f31","#65736f"];
+  if(!items.length) return <div className="page empty-study"><div><Search/><h2>Seu estudo está vazio</h2><p>Escolha quaisquer receitas no explorador para montar análises personalizadas.</p><button onClick={()=>setTab("detalhes")}>Explorar receitas <ArrowUpRight/></button></div></div>;
+  return <div className="page">
+    <div className="study-head"><div><span>ESTUDO PERSONALIZADO</span><h2>{items.length} receitas selecionadas</h2><p>A seleção fica salva neste navegador e pode ser alterada a qualquer momento.</p></div><div><button onClick={()=>setTab("detalhes")}><Plus/> Adicionar receitas</button><button className="clear" onClick={()=>setStudy([])}><Trash2/> Limpar</button></div></div>
+    <div className="study-list">{items.map((i,idx)=><div key={i.id}><span style={{background:palette[idx%palette.length]}}/><div><strong>{i.name}</strong><small>{i.theme} · {i.origin}</small></div><button onClick={()=>setStudy(s=>s.filter(x=>x!==i.id))}><X/></button></div>)}</div>
+    <div className="grid two">
+      <Card title="Comparação anual" subtitle="Evolução das receitas selecionadas">
+        <ResponsiveContainer width="100%" height={320}><BarChart data={annual}><CartesianGrid stroke="#e8ece8" vertical={false}/><XAxis dataKey="year" axisLine={false} tickLine={false}/><YAxis tickFormatter={v=>compact.format(v)} axisLine={false} tickLine={false}/><Tooltip formatter={v=>brl.format(v)}/><Legend formatter={id=>items.find(i=>i.id===id)?.name||id}/>{items.map((i,idx)=><Bar key={i.id} dataKey={i.id} fill={palette[idx%palette.length]} radius={[3,3,0,0]}/>)}</BarChart></ResponsiveContainer>
+      </Card>
+      <Card title="Perfil mensal acumulado" subtitle="Soma de janeiro a dezembro em 2023–2025">
+        <ResponsiveContainer width="100%" height={320}><AreaChart data={monthly}><CartesianGrid stroke="#e8ece8" vertical={false}/><XAxis dataKey="month" axisLine={false} tickLine={false}/><YAxis tickFormatter={v=>compact.format(v)} axisLine={false} tickLine={false}/><Tooltip formatter={v=>brl.format(v)}/>{items.map((i,idx)=><Area key={i.id} type="monotone" dataKey={i.id} stroke={palette[idx%palette.length]} fill={palette[idx%palette.length]} fillOpacity=".04" strokeWidth="2"/>)}</AreaChart></ResponsiveContainer>
+      </Card>
+    </div>
+    <Card title="Quadro do estudo" subtitle="Valores anuais, média, crescimento e participação no conjunto">
+      <div className="table-wrap"><table><thead><tr><th>Receita</th><th>Segmento</th><th>2023</th><th>2024</th><th>2025</th><th>Média</th><th>Cresc. 23–25</th><th>Participação</th></tr></thead><tbody>{items.map(i=>{const vals=[2023,2024,2025].map(y=>sum(data.detailRecords.filter(r=>r.item===i.id&&r.year===y)));const total=items.reduce((a,item)=>a+sum(data.detailRecords.filter(r=>r.item===item.id)),0);const own=vals.reduce((a,b)=>a+b,0);return <tr key={i.id}><td><strong>{i.name}</strong></td><td>{i.theme}</td>{vals.map((v,j)=><td key={j}>{brl.format(v)}</td>)}<td>{brl.format(own/3)}</td><td>{vals[0]?pct((vals[2]/vals[0]-1)*100):"N/D"}</td><td>{total?(own/total*100).toFixed(1).replace(".",","):"0"}%</td></tr>})}</tbody></table></div>
+    </Card>
+  </div>
 }
 
 function Dashboard({model,expected,growth,topRisk,setTab}) {

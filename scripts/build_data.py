@@ -91,6 +91,78 @@ def parse_csv(path):
     return monthly, details
 
 
+def clean_label(value):
+    return (value or "").split(" - ", 1)[-1].strip()
+
+
+def detailed_theme(code, text):
+    c = re.sub(r"\D", "", code or "")
+    t = normalize(text)
+    social = ("ASSISTENCIA SOCIAL", "SUAS", "FNAS", "CRAS", "CREAS", "BOLSA FAMILIA",
+              "CRIANCA", "ADOLESCENTE", "IDOSO", "PROTECAO SOCIAL", "CADUNICO")
+    if any(k in t for k in social):
+        return "Assistência social"
+    if c.startswith(("1112", "1113", "1114")):
+        return "Impostos municipais"
+    if "SAUDE" in t or "SUS" in t:
+        return "Saúde"
+    if any(k in t for k in ("EDUCAC", "FNDE", "FUNDEB", "PNAE", "PNATE", "SALARIO-EDUCAC")):
+        return "Educação"
+    if c.startswith("17") or c.startswith("24") or c.startswith("95"):
+        return "Transferências"
+    if c.startswith("12"):
+        return "Contribuições"
+    if c.startswith("13"):
+        return "Receita patrimonial"
+    if c.startswith("16"):
+        return "Serviços"
+    if c.startswith("21"):
+        return "Operações de crédito"
+    return "Outras receitas"
+
+
+def detailed_origin(code, text):
+    c = re.sub(r"\D", "", code or "")
+    t = normalize(text)
+    if c.startswith(("171", "241")) or "UNIAO" in t or "FNAS" in t or "FNDE" in t:
+        return "União"
+    if c.startswith(("172", "242")) or "ESTADO" in t:
+        return "Estado"
+    if c.startswith(("175", "245")):
+        return "Outras instituições"
+    if c.startswith(("111", "112", "113", "12", "13", "16", "19", "21")):
+        return "Município"
+    return "Outras"
+
+
+def parse_detailed_csv(path, item_map, record_map):
+    with path.open("r", encoding="latin-1", newline="") as fh:
+        reader = csv.DictReader(fh, delimiter=";")
+        for row in reader:
+            code = row["ds_tipo"].split(" - ", 1)[0].strip()
+            account = clean_label(row["ds_tipo"])
+            app_fixed = clean_label(row["ds_cd_aplicacao_fixo"])
+            app_var = clean_label(row["ds_cd_aplicacao_variavel"])
+            org = row["ds_orgao"].strip()
+            context = " ".join((account, app_fixed, app_var, row["ds_fonte_recurso"]))
+            theme = detailed_theme(code, context)
+            origin = detailed_origin(code, context)
+            # Aplicações específicas são mantidas para permitir estudar convênios e programas.
+            app_key = row["ds_cd_aplicacao_fixo"].split(" - ", 1)[0].strip()
+            var_key = row["ds_cd_aplicacao_variavel"].split(" - ", 1)[0].strip()
+            item_id = f"{code}|{app_key}|{var_key}|{org}"
+            if item_id not in item_map:
+                item_map[item_id] = {
+                    "id": item_id, "code": code, "name": account, "theme": theme, "origin": origin,
+                    "application": app_fixed, "applicationDetail": app_var, "agency": org,
+                    "level1": clean_label(row["ds_categoria"]),
+                    "level2": clean_label(row["ds_subcategoria"]),
+                    "level3": clean_label(row["ds_fonte"]),
+                }
+            amount = float(row["vl_arrecadacao"].replace(".", "").replace(",", "."))
+            record_map[(int(row["ano_exercicio"]), int(row["mes_referencia"]), item_id)] += amount
+
+
 def br_number(raw):
     return float(raw.replace(".", "").replace(",", "."))
 
@@ -136,10 +208,13 @@ def parse_pdf(path):
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     records = []
+    detailed_items = {}
+    detailed_records = defaultdict(float)
     source_notes = []
     for year in (2023, 2024, 2025):
         path = ROOT / f"receitas-vargem-grande-do-sul-{year}.csv"
         monthly, details = parse_csv(path)
+        parse_detailed_csv(path, detailed_items, detailed_records)
         for month in range(1, 13):
             for cat in CATEGORIES:
                 records.append({"year": year, "month": month, "category": cat["id"], "value": round(monthly[month][cat["id"]], 2), "status": "realizado"})
@@ -157,6 +232,11 @@ def main():
         "generatedAt": "2026-07-28",
         "categories": CATEGORIES,
         "records": records,
+        "detailItems": list(detailed_items.values()),
+        "detailRecords": [
+            {"year": y, "month": m, "item": item, "value": round(value, 2)}
+            for (y, m, item), value in detailed_records.items()
+        ],
         "sources": source_notes,
         "missingYears": [2022],
         "defaults": {

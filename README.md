@@ -2,6 +2,10 @@
 
 Painel executivo para organizar o histórico de transferências de Vargem Grande do Sul e simular cenários para a LOA 2027.
 
+Além do painel executivo, o sistema contém um explorador com fragmentação por
+rubrica, código contábil, origem, aplicação e órgão. Qualquer receita pode ser
+adicionada a um estudo personalizado, com comparativos anuais e mensais.
+
 ## Executar
 
 ```powershell
