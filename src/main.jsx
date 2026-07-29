@@ -175,13 +175,25 @@ function Studies({data,study,setStudy,setTab}) {
       sum(data.detailRecords.filter(r=>r.item===i.id&&r.month===idx+1))
     ]))
   }));
+  const annualTotals=annual.map(row=>items.reduce((total,item)=>total+(row[item.id]||0),0));
+  const continuousDown=annualTotals[1]<annualTotals[0]&&annualTotals[2]<annualTotals[1];
+  const continuousUp=annualTotals[1]>annualTotals[0]&&annualTotals[2]>annualTotals[1];
+  const studyChange=(current,previous)=>previous?pct((current/previous-1)*100):"sem base comparável";
+  const trendTitle=continuousDown?"Queda contínua no conjunto":continuousUp?"Crescimento contínuo no conjunto":"Comportamento oscilante";
+  const trendText=continuousDown
+    ? `A seleção caiu ${studyChange(annualTotals[1],annualTotals[0])} em 2024 e ${studyChange(annualTotals[2],annualTotals[1])} em 2025.`
+    : continuousUp
+      ? `A seleção cresceu ${studyChange(annualTotals[1],annualTotals[0])} em 2024 e ${studyChange(annualTotals[2],annualTotals[1])} em 2025.`
+      : `A trajetória mudou de direção: ${studyChange(annualTotals[1],annualTotals[0])} em 2024 e ${studyChange(annualTotals[2],annualTotals[1])} em 2025.`;
   const palette=["#167c69","#d6a944","#d86751","#527cba","#8659a8","#4ca8a0","#b46f31","#65736f"];
   if(!items.length) return <div className="page empty-study"><div><Search/><h2>Seu estudo está vazio</h2><p>Escolha quaisquer receitas no explorador para montar análises personalizadas.</p><button onClick={()=>setTab("detalhes")}>Explorar receitas <ArrowUpRight/></button></div></div>;
   return <div className="page">
     <div className="study-head"><div><span>ESTUDO PERSONALIZADO</span><h2>{items.length} receitas selecionadas</h2><p>A seleção fica salva neste navegador e pode ser alterada a qualquer momento.</p></div><div><button onClick={()=>setTab("detalhes")}><Plus/> Adicionar receitas</button><button className="clear" onClick={()=>setStudy([])}><Trash2/> Limpar</button></div></div>
+    <div className="study-list">{items.map((i,idx)=><div key={i.id}><span style={{background:palette[idx%palette.length]}}/><div><strong>{i.name}</strong><small>{i.theme} · {i.origin}</small></div><button onClick={()=>setStudy(s=>s.filter(x=>x!==i.id))}><X/></button></div>)}</div>
+    <div className={`study-conclusion ${continuousDown?"down":continuousUp?"up":"mixed"}`}><TrendingUp/><div><strong>{trendTitle}</strong><span>{trendText}</span></div><div className="study-years">{annualTotals.map((v,i)=><span key={i}><small>{2023+i}</small>{compact.format(v)}</span>)}</div></div>
     <div className="grid two">
       <Card title="Comparação anual" subtitle="Evolução das receitas selecionadas">
-        <ResponsiveContainer width="100%" height={320}><BarChart data={annual}><CartesianGrid stroke="#e8ece8" vertical={false}/><XAxis dataKey="year" axisLine={false} tickLine={false}/><YAxis tickFormatter={v=>compact.format(v)} axisLine={false} tickLine={false}/><Tooltip formatter={v=>brl.format(v)}/><Legend formatter={id=>items.find(i=>i.id===id)?.name||id}/>{items.map((i,idx)=><Bar key={i.id} dataKey={i.id} fill={palette[idx%palette.length]} radius={[3,3,0,0]}/>)}</BarChart></ResponsiveContainer>
+        <ResponsiveContainer width="100%" height={320}><BarChart data={annual}><CartesianGrid stroke="#e8ece8" vertical={false}/><XAxis dataKey="year" axisLine={false} tickLine={false}/><YAxis tickFormatter={v=>compact.format(v)} axisLine={false} tickLine={false}/><Tooltip formatter={(v,name)=>[brl.format(v),items.find(i=>i.id===name)?.name||name]}/>{items.map((i,idx)=><Bar key={i.id} dataKey={i.id} fill={palette[idx%palette.length]} radius={[3,3,0,0]}/>)}</BarChart></ResponsiveContainer>
       </Card>
       <Card title="Perfil mensal acumulado" subtitle="Soma de janeiro a dezembro em 2023–2025">
         <ResponsiveContainer width="100%" height={320}><AreaChart data={monthly}><CartesianGrid stroke="#e8ece8" vertical={false}/><XAxis dataKey="month" axisLine={false} tickLine={false}/><YAxis tickFormatter={v=>compact.format(v)} axisLine={false} tickLine={false}/><Tooltip formatter={v=>brl.format(v)}/>{items.map((i,idx)=><Area key={i.id} type="monotone" dataKey={i.id} stroke={palette[idx%palette.length]} fill={palette[idx%palette.length]} fillOpacity=".04" strokeWidth="2"/>)}</AreaChart></ResponsiveContainer>
@@ -270,6 +282,7 @@ function Scenarios({model,rates,setRates,scenario,setScenario}) {
         <div className="table-wrap compact-table"><table><thead><tr><th>Receita</th><th>2026</th><th>Pess.</th><th>Real.</th><th>Otim.</th></tr></thead><tbody>{model.cats.map(c=><tr key={c.id}><td><strong>{c.name}</strong></td><td>{compact.format(model.base26[c.id])}</td><td>{compact.format(model.projections.pessimista[c.id])}</td><td>{compact.format(model.projections.realista[c.id])}</td><td>{compact.format(model.projections.otimista[c.id])}</td></tr>)}<tr className="total"><td>Total</td><td>{compact.format(model.total26)}</td>{["pessimista","realista","otimista"].map(s=><td key={s}>{compact.format(model.totals[s])}</td>)}</tr></tbody></table></div>
       </Card>
       <Card title="Sensibilidade: choque de 5%" subtitle="Impacto isolado nas maiores receitas">
+        <div className="sensitivity-note"><Info/><p><strong>Justificativa do teste.</strong> O choque de 5% é padronizado, fácil de comunicar e permite comparar exposições. Todas as demais receitas são mantidas constantes; reduz-se apenas a fonte analisada. O cálculo é <b>base anualizada de 2026 × 5%</b>, portanto receitas maiores provocam perdas absolutas maiores mesmo quando apresentam baixa volatilidade.</p></div>
         <div className="sensitivity">{sensitivity.map(c=><div key={c.id}><div><strong>{c.name}</strong><span>{c.origin}</span></div><div className="impact"><ArrowDownRight/> {brl.format(model.base26[c.id]*.05)}</div><div className="bar"><span style={{width:`${Math.min(100,model.base26[c.id]/model.base26[sensitivity[0].id]*100)}%`}}/></div></div>)}</div>
       </Card>
     </div>
