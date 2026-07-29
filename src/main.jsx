@@ -143,6 +143,7 @@ function FullDatabase({data}) {
   const [filterValue,setFilterValue]=useState("");
   const [sort,setSort]=useState({key:"year",direction:"desc"});
   const [page,setPage]=useState(1);
+  const [summaryModal,setSummaryModal]=useState(null);
   const pageSize=50;
   const columns=Object.fromEntries(data.rawColumns.map(c=>[c.key,c]));
   const searchable=data.rawColumns.map(c=>c.key);
@@ -163,7 +164,10 @@ function FullDatabase({data}) {
   useEffect(()=>setPage(1),[query,year,filters,headerFilters,visible]);
   const pages=Math.max(1,Math.ceil(rows.length/pageSize));
   const shown=rows.slice((page-1)*pageSize,page*pageSize);
-  const total=rows.reduce((a,r)=>a+(Number(r.value)||0),0);
+  const financialRows=rows.filter(r=>r.isAnalytical);
+  const gross=financialRows.filter(r=>Number(r.value)>0).reduce((a,r)=>a+Number(r.value),0);
+  const deductions=Math.abs(financialRows.filter(r=>Number(r.value)<0).reduce((a,r)=>a+Number(r.value),0));
+  const net=gross-deductions;
   const addFilter=()=>{if(!filterValue.trim())return;setFilters(f=>[...f,{key:filterColumn,value:filterValue.trim()}]);setFilterValue("")};
   const toggleColumn=key=>setVisible(v=>v.includes(key)?v.filter(x=>x!==key):[...v,key]);
   const changeSort=key=>setSort(s=>({key,direction:s.key===key&&s.direction==="asc"?"desc":"asc"}));
@@ -178,7 +182,13 @@ function FullDatabase({data}) {
   };
   return <div className="page">
     <div className="database-hero"><div><span>BASE ANALÍTICA INTEGRAL</span><h2>Planilha de receitas</h2><p>{data.rawRecords.length.toLocaleString("pt-BR")} registros importados dos arquivos originais, com códigos e dimensões preservados.</p></div><button onClick={exportRows}><Download/> Exportar filtrado</button></div>
-    <div className="database-kpis"><Kpi label="Linhas filtradas" value={rows.length.toLocaleString("pt-BR")} note={`de ${data.rawRecords.length.toLocaleString("pt-BR")} registros`}/><Kpi label="Valor arrecadado" value={brl.format(total)} note="soma das linhas filtradas"/><Kpi label="Colunas disponíveis" value={String(data.rawColumns.length)} note={`${visible.length} visíveis na grade`}/></div>
+    <div className="financial-summary">
+      <button onClick={()=>setSummaryModal("gross")}><span>Arrecadação bruta <Info/></span><strong>{brl.format(gross)}</strong><small>X · soma dos lançamentos positivos</small></button>
+      <div className="summary-operator">−</div>
+      <button className="deduction" onClick={()=>setSummaryModal("deductions")}><span>Deduções <Info/></span><strong>{brl.format(deductions)}</strong><small>Y · Fundeb e demais valores negativos</small></button>
+      <div className="summary-operator">=</div>
+      <button className="net" onClick={()=>setSummaryModal("net")}><span>Arrecadação líquida <Info/></span><strong>{brl.format(net)}</strong><small>X − Y · valor após as deduções</small></button>
+    </div>
     <Card title="Filtros da base" subtitle="Combine qualquer coluna do CSV; todos os filtros são cumulativos">
       <div className="database-toolbar">
         <label className="searchbox"><Search/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Pesquisar em todas as colunas..."/></label>
@@ -203,7 +213,19 @@ function FullDatabase({data}) {
       <div className="sheet-wrap"><table><thead><tr>{visible.map(key=><th key={key} onClick={()=>changeSort(key)} className={sort.key===key?"sorted":""}>{columns[key].label}<small>{sort.key===key?(sort.direction==="asc"?"↑":"↓"):""}</small></th>)}</tr><tr className="column-filter-row">{visible.map(key=><th key={`filter-${key}`}><div><Search/><input value={headerFilters[key]||""} onChange={e=>setHeaderFilter(key,e.target.value)} onClick={e=>e.stopPropagation()} placeholder="Filtrar..."/>{headerFilters[key]?<button onClick={e=>{e.stopPropagation();setHeaderFilter(key,"")}}><X/></button>:null}</div></th>)}</tr></thead><tbody>{shown.map((row,idx)=><tr key={`${row.sourceFile}-${(page-1)*pageSize+idx}`}>{visible.map(key=><td key={key} className={columns[key].type==="currency"?"numeric":""}>{columns[key].type==="currency"&&row[key]!=null?brl.format(row[key]):String(row[key]??"")}</td>)}</tr>)}</tbody></table></div>
       <div className="pagination"><button disabled={page===1} onClick={()=>setPage(p=>p-1)}>Anterior</button><span>Página <strong>{page}</strong> de {pages}</span><button disabled={page===pages} onClick={()=>setPage(p=>p+1)}>Próxima</button></div>
     </section>
+    {summaryModal&&<FinancialModal type={summaryModal} gross={gross} deductions={deductions} net={net} rows={financialRows} onClose={()=>setSummaryModal(null)}/>}
   </div>
+}
+
+function FinancialModal({type,gross,deductions,net,rows,onClose}) {
+  const config={
+    gross:{title:"Arrecadação bruta (X)",value:gross,text:"Soma de todos os lançamentos analíticos positivos dentro dos filtros atuais."},
+    deductions:{title:"Deduções (Y)",value:deductions,text:"Soma em valor absoluto dos lançamentos analíticos negativos, incluindo as deduções para formação do Fundeb."},
+    net:{title:"Arrecadação líquida (X − Y)",value:net,text:"Resultado disponível após subtrair as deduções da arrecadação bruta."}
+  }[type];
+  const lines=(type==="gross"?rows.filter(r=>r.value>0):type==="deductions"?rows.filter(r=>r.value<0):[])
+    .sort((a,b)=>Math.abs(b.value)-Math.abs(a.value)).slice(0,8);
+  return <div className="modal-backdrop" onMouseDown={onClose}><section className="financial-modal" onMouseDown={e=>e.stopPropagation()}><button className="modal-close" onClick={onClose}><X/></button><span>COMPOSIÇÃO DO VALOR</span><h3>{config.title}</h3><strong className="modal-value">{brl.format(config.value)}</strong><p>{config.text}</p><div className="formula-box"><div><small>Arrecadação bruta (X)</small><b>{brl.format(gross)}</b></div><em>−</em><div><small>Deduções (Y)</small><b>{brl.format(deductions)}</b></div><em>=</em><div><small>Arrecadação líquida</small><b>{brl.format(net)}</b></div></div>{lines.length>0&&<div className="modal-lines"><h4>Maiores componentes nos filtros atuais</h4>{lines.map((r,i)=><div key={`${r.sourceFile}-${i}`}><span><b>{r.account}</b><small>{r.year} · {r.agency||r.sourceFile}</small></span><strong>{brl.format(Math.abs(r.value))}</strong></div>)}</div>}<footer>Somente contas analíticas são somadas, evitando duplicidade dos níveis sintéticos do balancete de 2026.</footer></section></div>
 }
 
 function Detailed({data,study,setStudy,setTab}) {

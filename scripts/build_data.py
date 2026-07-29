@@ -236,7 +236,8 @@ def parse_raw_csv(path):
                 "level1": row["ds_d1"], "level2": row["ds_dd2"], "level3": row["ds_d3"],
                 "account": row["ds_tipo"], "code": code,
                 "value": round(float(row["vl_arrecadacao"].replace(".", "").replace(",", ".")), 2),
-                "budget": None, "periodValue": None, "level": None, "sourceFile": path.name,
+                "budget": None, "periodValue": None, "level": None, "isAnalytical": True,
+                "sourceFile": path.name,
             })
     return rows
 
@@ -263,8 +264,18 @@ def parse_raw_2026(path):
                 "level1": "", "level2": "", "level3": "", "account": get("nomeReceita"),
                 "code": code, "value": number("valorAcumulado"), "budget": number("orcado"),
                 "periodValue": number("valorPeriodo"), "level": int(get("nivel")) if get("nivel") else None,
-                "sourceFile": path.name,
+                "isAnalytical": False, "sourceFile": path.name,
             })
+    prefix_lengths = {1: 1, 2: 2, 3: 3, 4: 4, 5: 6, 6: 7, 7: 8, 8: 13}
+    for current in rows:
+        digits = re.sub(r"\D", "", current["code"])
+        plen = prefix_lengths.get(current["level"], len(digits))
+        prefix = digits[:plen]
+        current["isAnalytical"] = not any(
+            other["level"] > current["level"]
+            and re.sub(r"\D", "", other["code"]).startswith(prefix)
+            for other in rows
+        )
     return rows
 
 
