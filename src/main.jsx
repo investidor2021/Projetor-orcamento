@@ -138,6 +138,7 @@ function FullDatabase({data}) {
   const [query,setQuery]=useState("");
   const [year,setYear]=useState("Todos");
   const [filters,setFilters]=useState([]);
+  const [headerFilters,setHeaderFilters]=useState({});
   const [filterColumn,setFilterColumn]=useState("agency");
   const [filterValue,setFilterValue]=useState("");
   const [sort,setSort]=useState({key:"year",direction:"desc"});
@@ -150,21 +151,24 @@ function FullDatabase({data}) {
     const filtered=data.rawRecords.filter(row=>{
       if(year!=="Todos"&&row.year!==+year) return false;
       if(q&&!searchable.some(key=>String(row[key]??"").toLowerCase().includes(q))) return false;
-      return filters.every(f=>String(row[f.key]??"").toLowerCase().includes(f.value.toLowerCase()));
+      if(!filters.every(f=>String(row[f.key]??"").toLowerCase().includes(f.value.toLowerCase()))) return false;
+      return Object.entries(headerFilters).every(([key,value])=>!value||String(row[key]??"").toLowerCase().includes(value.toLowerCase()));
     });
     return filtered.sort((a,b)=>{
       const av=a[sort.key]??"", bv=b[sort.key]??"";
       const result=typeof av==="number"&&typeof bv==="number"?av-bv:String(av).localeCompare(String(bv),"pt-BR");
       return sort.direction==="asc"?result:-result;
     });
-  },[data,query,year,filters,sort]);
-  useEffect(()=>setPage(1),[query,year,filters,visible]);
+  },[data,query,year,filters,headerFilters,sort]);
+  useEffect(()=>setPage(1),[query,year,filters,headerFilters,visible]);
   const pages=Math.max(1,Math.ceil(rows.length/pageSize));
   const shown=rows.slice((page-1)*pageSize,page*pageSize);
   const total=rows.reduce((a,r)=>a+(Number(r.value)||0),0);
   const addFilter=()=>{if(!filterValue.trim())return;setFilters(f=>[...f,{key:filterColumn,value:filterValue.trim()}]);setFilterValue("")};
   const toggleColumn=key=>setVisible(v=>v.includes(key)?v.filter(x=>x!==key):[...v,key]);
   const changeSort=key=>setSort(s=>({key,direction:s.key===key&&s.direction==="asc"?"desc":"asc"}));
+  const setHeaderFilter=(key,value)=>setHeaderFilters(old=>({...old,[key]:value}));
+  const clearAllFilters=()=>{setQuery("");setYear("Todos");setFilters([]);setHeaderFilters({})};
   const exportRows=()=>{
     const escape=v=>`"${String(v??"").replaceAll('"','""')}"`;
     const header=visible.map(k=>escape(columns[k].label)).join(";");
@@ -184,11 +188,19 @@ function FullDatabase({data}) {
         <button onClick={addFilter}><Plus/> Adicionar</button>
         <details className="column-picker"><summary><TableProperties/> Colunas</summary><div>{data.rawColumns.map(c=><label key={c.key}><input type="checkbox" checked={visible.includes(c.key)} onChange={()=>toggleColumn(c.key)}/>{c.label}</label>)}</div></details>
       </div>
-      <div className="filter-chips">{filters.map((f,i)=><button key={`${f.key}-${i}`} onClick={()=>setFilters(old=>old.filter((_,idx)=>idx!==i))}><span>{columns[f.key].label}:</span> {f.value}<X/></button>)}{filters.length>0&&<button className="clear-filters" onClick={()=>setFilters([])}>Limpar filtros</button>}</div>
+      <div className="quick-filters">
+        <label><span>Mês</span><input value={headerFilters.monthName||""} onChange={e=>setHeaderFilter("monthName",e.target.value)} placeholder="Ex.: Janeiro"/></label>
+        <label><span>Órgão</span><input value={headerFilters.agency||""} onChange={e=>setHeaderFilter("agency",e.target.value)} placeholder="Nome do órgão"/></label>
+        <label><span>Fonte de recurso</span><input value={headerFilters.resourceSource||""} onChange={e=>setHeaderFilter("resourceSource",e.target.value)} placeholder="Tesouro, federal..."/></label>
+        <label><span>Categoria</span><input value={headerFilters.category||""} onChange={e=>setHeaderFilter("category",e.target.value)} placeholder="Receitas correntes..."/></label>
+        <label><span>Natureza da receita</span><input value={headerFilters.account||""} onChange={e=>setHeaderFilter("account",e.target.value)} placeholder="IPTU, ICMS, serviços..."/></label>
+        <button onClick={clearAllFilters}><X/> Limpar tudo</button>
+      </div>
+      <div className="filter-chips">{filters.map((f,i)=><button key={`${f.key}-${i}`} onClick={()=>setFilters(old=>old.filter((_,idx)=>idx!==i))}><span>{columns[f.key].label}:</span> {f.value}<X/></button>)}{Object.entries(headerFilters).filter(([,v])=>v).map(([key,value])=><button key={`header-${key}`} onClick={()=>setHeaderFilter(key,"")}><span>{columns[key].label}:</span> {value}<X/></button>)}</div>
     </Card>
     <section className="sheet-card">
       <div className="sheet-meta"><span>Exibindo {(page-1)*pageSize+1}–{Math.min(page*pageSize,rows.length)} de {rows.length.toLocaleString("pt-BR")}</span><span>Clique no cabeçalho para ordenar</span></div>
-      <div className="sheet-wrap"><table><thead><tr>{visible.map(key=><th key={key} onClick={()=>changeSort(key)} className={sort.key===key?"sorted":""}>{columns[key].label}<small>{sort.key===key?(sort.direction==="asc"?"↑":"↓"):""}</small></th>)}</tr></thead><tbody>{shown.map((row,idx)=><tr key={`${row.sourceFile}-${(page-1)*pageSize+idx}`}>{visible.map(key=><td key={key} className={columns[key].type==="currency"?"numeric":""}>{columns[key].type==="currency"&&row[key]!=null?brl.format(row[key]):String(row[key]??"")}</td>)}</tr>)}</tbody></table></div>
+      <div className="sheet-wrap"><table><thead><tr>{visible.map(key=><th key={key} onClick={()=>changeSort(key)} className={sort.key===key?"sorted":""}>{columns[key].label}<small>{sort.key===key?(sort.direction==="asc"?"↑":"↓"):""}</small></th>)}</tr><tr className="column-filter-row">{visible.map(key=><th key={`filter-${key}`}><div><Search/><input value={headerFilters[key]||""} onChange={e=>setHeaderFilter(key,e.target.value)} onClick={e=>e.stopPropagation()} placeholder="Filtrar..."/>{headerFilters[key]?<button onClick={e=>{e.stopPropagation();setHeaderFilter(key,"")}}><X/></button>:null}</div></th>)}</tr></thead><tbody>{shown.map((row,idx)=><tr key={`${row.sourceFile}-${(page-1)*pageSize+idx}`}>{visible.map(key=><td key={key} className={columns[key].type==="currency"?"numeric":""}>{columns[key].type==="currency"&&row[key]!=null?brl.format(row[key]):String(row[key]??"")}</td>)}</tr>)}</tbody></table></div>
       <div className="pagination"><button disabled={page===1} onClick={()=>setPage(p=>p-1)}>Anterior</button><span>Página <strong>{page}</strong> de {pages}</span><button disabled={page===pages} onClick={()=>setPage(p=>p+1)}>Próxima</button></div>
     </section>
   </div>
