@@ -166,6 +166,7 @@ function Detailed({data,study,setStudy,setTab}) {
 }
 
 function Studies({data,study,setStudy,setTab}) {
+  const [activeStudy,setActiveStudy]=useState(null);
   const items=study.map(id=>data.detailItems.find(i=>i.id===id)).filter(Boolean);
   const annual=[2023,2024,2025].map(year=>({year:String(year),...Object.fromEntries(items.map(i=>[i.id,sum(data.detailRecords.filter(r=>r.item===i.id&&r.year===year))]))}));
   const monthly=months.map((month,idx)=>({
@@ -189,20 +190,27 @@ function Studies({data,study,setStudy,setTab}) {
   if(!items.length) return <div className="page empty-study"><div><Search/><h2>Seu estudo está vazio</h2><p>Escolha quaisquer receitas no explorador para montar análises personalizadas.</p><button onClick={()=>setTab("detalhes")}>Explorar receitas <ArrowUpRight/></button></div></div>;
   return <div className="page">
     <div className="study-head"><div><span>ESTUDO PERSONALIZADO</span><h2>{items.length} receitas selecionadas</h2><p>A seleção fica salva neste navegador e pode ser alterada a qualquer momento.</p></div><div><button onClick={()=>setTab("detalhes")}><Plus/> Adicionar receitas</button><button className="clear" onClick={()=>setStudy([])}><Trash2/> Limpar</button></div></div>
-    <div className="study-list">{items.map((i,idx)=><div key={i.id}><span style={{background:palette[idx%palette.length]}}/><div><strong>{i.name}</strong><small>{i.theme} · {i.origin}</small></div><button onClick={()=>setStudy(s=>s.filter(x=>x!==i.id))}><X/></button></div>)}</div>
+    <div className="study-list">{items.map((i,idx)=><div key={i.id} role="button" tabIndex="0" title="Clique para destacar esta receita nos gráficos" className={activeStudy===i.id?"focused":activeStudy?"dimmed":""} onClick={()=>setActiveStudy(v=>v===i.id?null:i.id)} onKeyDown={e=>e.key==="Enter"&&setActiveStudy(v=>v===i.id?null:i.id)}><span style={{background:palette[idx%palette.length]}}/><div><strong>{i.name}</strong><small>{i.theme} · {i.origin}</small></div><button onClick={e=>{e.stopPropagation();setStudy(s=>s.filter(x=>x!==i.id));if(activeStudy===i.id)setActiveStudy(null)}}><X/></button></div>)}</div>
+    <div className="study-focus-hint">{activeStudy?<><CheckCircle2/> Série destacada: <strong>{items.find(i=>i.id===activeStudy)?.name}</strong></>:<>Clique em um card acima para destacar a receita nos gráficos.</>}</div>
     <div className={`study-conclusion ${continuousDown?"down":continuousUp?"up":"mixed"}`}><TrendingUp/><div><strong>{trendTitle}</strong><span>{trendText}</span></div><div className="study-years">{annualTotals.map((v,i)=><span key={i}><small>{2023+i}</small>{compact.format(v)}</span>)}</div></div>
     <div className="grid two">
       <Card title="Comparação anual" subtitle="Evolução das receitas selecionadas">
-        <ResponsiveContainer width="100%" height={320}><BarChart data={annual}><CartesianGrid stroke="#e8ece8" vertical={false}/><XAxis dataKey="year" axisLine={false} tickLine={false}/><YAxis tickFormatter={v=>compact.format(v)} axisLine={false} tickLine={false}/><Tooltip formatter={(v,name)=>[brl.format(v),items.find(i=>i.id===name)?.name||name]}/>{items.map((i,idx)=><Bar key={i.id} dataKey={i.id} fill={palette[idx%palette.length]} radius={[3,3,0,0]}/>)}</BarChart></ResponsiveContainer>
+        <ResponsiveContainer width="100%" height={320}><BarChart data={annual}><CartesianGrid stroke="#e8ece8" vertical={false}/><XAxis dataKey="year" axisLine={false} tickLine={false}/><YAxis tickFormatter={v=>compact.format(v)} axisLine={false} tickLine={false}/><Tooltip content={<StudyTooltip items={items} activeStudy={activeStudy}/>}/>{items.map((i,idx)=><Bar key={i.id} dataKey={i.id} fill={palette[idx%palette.length]} fillOpacity={!activeStudy||activeStudy===i.id?1:.12} radius={[3,3,0,0]}/>)}</BarChart></ResponsiveContainer>
       </Card>
       <Card title="Perfil mensal acumulado" subtitle="Soma de janeiro a dezembro em 2023–2025">
-        <ResponsiveContainer width="100%" height={320}><AreaChart data={monthly}><CartesianGrid stroke="#e8ece8" vertical={false}/><XAxis dataKey="month" axisLine={false} tickLine={false}/><YAxis tickFormatter={v=>compact.format(v)} axisLine={false} tickLine={false}/><Tooltip formatter={v=>brl.format(v)}/>{items.map((i,idx)=><Area key={i.id} type="monotone" dataKey={i.id} stroke={palette[idx%palette.length]} fill={palette[idx%palette.length]} fillOpacity=".04" strokeWidth="2"/>)}</AreaChart></ResponsiveContainer>
+        <ResponsiveContainer width="100%" height={320}><AreaChart data={monthly}><CartesianGrid stroke="#e8ece8" vertical={false}/><XAxis dataKey="month" axisLine={false} tickLine={false}/><YAxis tickFormatter={v=>compact.format(v)} axisLine={false} tickLine={false}/><Tooltip content={<StudyTooltip items={items} activeStudy={activeStudy}/>}/>{items.map((i,idx)=><Area key={i.id} type="monotone" dataKey={i.id} stroke={palette[idx%palette.length]} fill={palette[idx%palette.length]} fillOpacity={(!activeStudy||activeStudy===i.id)?.08:.01} strokeOpacity={!activeStudy||activeStudy===i.id?1:.12} strokeWidth={activeStudy===i.id?4:2}/>)}</AreaChart></ResponsiveContainer>
       </Card>
     </div>
     <Card title="Quadro do estudo" subtitle="Valores anuais, média, crescimento e participação no conjunto">
       <div className="table-wrap"><table><thead><tr><th>Receita</th><th>Segmento</th><th>2023</th><th>2024</th><th>2025</th><th>Média</th><th>Cresc. 23–25</th><th>Participação</th></tr></thead><tbody>{items.map(i=>{const vals=[2023,2024,2025].map(y=>sum(data.detailRecords.filter(r=>r.item===i.id&&r.year===y)));const total=items.reduce((a,item)=>a+sum(data.detailRecords.filter(r=>r.item===item.id)),0);const own=vals.reduce((a,b)=>a+b,0);return <tr key={i.id}><td><strong>{i.name}</strong></td><td>{i.theme}</td>{vals.map((v,j)=><td key={j}>{brl.format(v)}</td>)}<td>{brl.format(own/3)}</td><td>{vals[0]?pct((vals[2]/vals[0]-1)*100):"N/D"}</td><td>{total?(own/total*100).toFixed(1).replace(".",","):"0"}%</td></tr>})}</tbody></table></div>
     </Card>
   </div>
+}
+
+function StudyTooltip({active,payload,label,items,activeStudy}) {
+  if(!active||!payload?.length) return null;
+  const visible=activeStudy?payload.filter(p=>p.dataKey===activeStudy):payload.slice(0,4);
+  return <div className="study-tooltip"><strong>{label}</strong>{visible.map(p=><div key={p.dataKey}><span style={{background:p.color}}/><em>{items.find(i=>i.id===p.dataKey)?.name||"Receita"}</em><b>{brl.format(p.value)}</b></div>)}{!activeStudy&&payload.length>4?<small>+ {payload.length-4} receitas — clique em um card para isolar</small>:null}</div>
 }
 
 function Dashboard({model,expected,growth,topRisk,setTab}) {
