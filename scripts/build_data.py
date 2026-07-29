@@ -11,6 +11,10 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "public" / "data"
 
 CATEGORIES = [
+    {"id": "iptu", "name": "IPTU", "origin": "Município", "risk": "Baixo", "macro": "Cadastro imobiliário, inadimplência e atualização da planta"},
+    {"id": "itbi", "name": "ITBI", "origin": "Município", "risk": "Alto", "macro": "Mercado imobiliário, crédito e taxa Selic"},
+    {"id": "irrf", "name": "IRRF", "origin": "Município", "risk": "Médio", "macro": "Massa salarial e pagamentos municipais"},
+    {"id": "issqn", "name": "ISSQN", "origin": "Município", "risk": "Médio", "macro": "Atividade do setor de serviços e fiscalização tributária"},
     {"id": "fpm", "name": "FPM", "origin": "União", "risk": "Médio", "macro": "PIB nacional e arrecadação de IR/IPI"},
     {"id": "itr", "name": "ITR", "origin": "União", "risk": "Médio", "macro": "Atividade agropecuária e valores de terra"},
     {"id": "comp_fin", "name": "Compensações Financeiras", "origin": "União", "risk": "Alto", "macro": "Produção e preços de recursos naturais"},
@@ -35,6 +39,14 @@ def normalize(value):
 def classify(code, desc):
     c = re.sub(r"\D", "", code or "")[:8]
     d = normalize(desc)
+    if c.startswith("111250"):
+        return "iptu"
+    if c.startswith("111253"):
+        return "itbi"
+    if c.startswith("111303"):
+        return "irrf"
+    if c.startswith("111451"):
+        return "issqn"
     # Deduções do Fundeb precisam retornar à receita-base para apuração líquida.
     if c.startswith("9517115") and "FPM" in d:
         return "fpm"
@@ -178,6 +190,10 @@ def pdf_value(text, code_pattern, label=None):
 def parse_pdf(path):
     text = "\n".join((p.extract_text() or "") for p in PdfReader(path).pages)
     vals = {
+        "iptu": pdf_value(text, r"1\.1\.1\.2\.50\.0\.0\."),
+        "itbi": pdf_value(text, r"1\.1\.1\.2\.53\.0\.0\."),
+        "irrf": pdf_value(text, r"1\.1\.1\.3\.03\.0\.0\."),
+        "issqn": pdf_value(text, r"1\.1\.1\.4\.51\.0\.0\."),
         "fpm": pdf_value(text, r"1\.7\.1\.1\.51\."),
         "itr": pdf_value(text, r"1\.7\.1\.1\.52\."),
         "sus": pdf_value(text, r"1\.7\.1\.3\.50\."),
@@ -240,9 +256,9 @@ def main():
         "sources": source_notes,
         "missingYears": [2022],
         "defaults": {
-            "pessimista": {"fpm": -3, "icms": -5, "ipva": -2, "ipi": -3, "sus": 0, "fnde": 0, "default": -2},
-            "realista": {"fpm": 4, "icms": 3, "ipva": 5, "ipi": 3, "sus": 2, "fnde": 3, "default": 3},
-            "otimista": {"fpm": 8, "icms": 7, "ipva": 8, "ipi": 7, "sus": 5, "fnde": 5, "default": 6},
+            "pessimista": {"iptu": 2, "itbi": -5, "irrf": 0, "issqn": -4, "fpm": -3, "icms": -5, "ipva": -2, "ipi": -3, "sus": 0, "fnde": 0, "default": -2},
+            "realista": {"iptu": 5, "itbi": 3, "irrf": 4, "issqn": 4, "fpm": 4, "icms": 3, "ipva": 5, "ipi": 3, "sus": 2, "fnde": 3, "default": 3},
+            "otimista": {"iptu": 8, "itbi": 8, "irrf": 7, "issqn": 8, "fpm": 8, "icms": 7, "ipva": 8, "ipi": 7, "sus": 5, "fnde": 5, "default": 6},
         },
         "assumptions": {
             "base2026": "Executado até junho anualizado por sazonalidade média de 2023-2025; fallback: multiplicação por 2.",

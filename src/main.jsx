@@ -116,7 +116,7 @@ function App() {
 
       <section className="filters">
         <div><label>Períodos comparados</label><div className="checks">{[2022,2023,2024,2025,2026].map(y=><label key={y} className={y===2022?"disabled":""}><input type="checkbox" disabled={y===2022} checked={years.includes(y)} onChange={()=>setYears(v=>v.includes(y)?v.filter(x=>x!==y):[...v,y])}/><span>{y}</span></label>)}</div></div>
-        <div className="origin-filter"><label>Origem</label><div className="segmented">{["Todas","União","Estado"].map(o=><button className={origin===o?"active":""} onClick={()=>setOrigin(o)} key={o}>{o}</button>)}</div></div>
+        <div className="origin-filter"><label>Origem</label><div className="segmented">{["Todas","Município","União","Estado"].map(o=><button className={origin===o?"active":""} onClick={()=>setOrigin(o)} key={o}>{o}</button>)}</div></div>
       </section>
 
       {tab==="visao" && <Dashboard model={model} expected={expected} growth={growth} topRisk={topRisk} setTab={setTab}/>}
@@ -206,7 +206,7 @@ function Dashboard({model,expected,growth,topRisk,setTab}) {
       <Kpi icon={ShieldAlert} label="Maior exposição" value={topRisk?.name||"—"} note={`${topRisk?.score.toFixed(0)} / 100 no índice de risco`} danger/>
     </div>
     <div className="grid two">
-      <Card title="Trajetória das transferências" subtitle="Realizado 2023–2025 e base anualizada 2026">
+      <Card title="Trajetória das receitas mapeadas" subtitle="Receitas próprias e transferências · realizado 2023–2025 e base anualizada 2026">
         <ResponsiveContainer width="100%" height={285}><AreaChart data={model.trend.filter(d=>!d.missing)}>
           <defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#5ec9a6" stopOpacity=".38"/><stop offset="1" stopColor="#5ec9a6" stopOpacity=".02"/></linearGradient></defs>
           <CartesianGrid stroke="#e8ece8" vertical={false}/><XAxis dataKey="year" axisLine={false} tickLine={false}/><YAxis tickFormatter={v=>compact.format(v)} axisLine={false} tickLine={false}/>
@@ -294,7 +294,7 @@ function Method({data}) {
     <div className="timeline">{data.sources.map((s,i)=><div key={s.year}><div className="timeline-year">{s.year}</div><div className="timeline-card"><FileText/><div><strong>{s.file}</strong><span>Cobertura: {s.coverage}</span><p>{s.method}.</p></div></div></div>)}</div>
     <div className="grid two">
       <Card title="Regras do modelo" subtitle="Premissas auditáveis">
-        <ol className="rules"><li><strong>Classificação por natureza da receita</strong><span>FPM, ITR, SUS, FNDE, ICMS, IPVA, IPI, CIDE, LC 176 e transferências conveniadas.</span></li><li><strong>Valores líquidos</strong><span>Deduções do Fundeb vinculadas a FPM, ITR, ICMS, IPVA e IPI são incorporadas.</span></li><li><strong>Anualização de 2026</strong><span>{data.assumptions.base2026}</span></li><li><strong>Cenários 2027</strong><span>Base anualizada multiplicada pelas taxas editáveis de cada cenário.</span></li></ol>
+        <ol className="rules"><li><strong>Classificação por natureza da receita</strong><span>IPTU, ITBI, IRRF, ISSQN, FPM, ITR, SUS, FNDE, ICMS, IPVA, IPI, CIDE, LC 176 e transferências conveniadas.</span></li><li><strong>Valores líquidos</strong><span>Deduções do Fundeb vinculadas a FPM, ITR, ICMS, IPVA e IPI são incorporadas.</span></li><li><strong>Anualização de 2026</strong><span>{data.assumptions.base2026}</span></li><li><strong>Cenários 2027</strong><span>Base anualizada multiplicada pelas taxas editáveis de cada cenário.</span></li></ol>
       </Card>
       <Card title="Pendências para elevar a confiança" subtitle="Próximos dados recomendados">
         <div className="pending"><div><AlertTriangle/><span><strong>Histórico de 2022</strong><small>Necessário para completar os cinco anos solicitados.</small></span></div><div><AlertTriangle/><span><strong>Execução mensal de 2026</strong><small>Substitui o rateio visual do PDF e melhora a curva de alertas.</small></span></div><div><Info/><span><strong>Previsão LOA por receita</strong><small>Permite calcular probabilidade de cumprimento e desvio realizado × previsto.</small></span></div><div><Info/><span><strong>Indicadores da LRF</strong><small>RCL, pessoal, resultado primário e caixa para medir impacto fiscal.</small></span></div></div>

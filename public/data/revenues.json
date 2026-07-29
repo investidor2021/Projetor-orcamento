@@ -3,6 +3,34 @@
   "generatedAt": "2026-07-28",
   "categories": [
     {
+      "id": "iptu",
+      "name": "IPTU",
+      "origin": "Município",
+      "risk": "Baixo",
+      "macro": "Cadastro imobiliário, inadimplência e atualização da planta"
+    },
+    {
+      "id": "itbi",
+      "name": "ITBI",
+      "origin": "Município",
+      "risk": "Alto",
+      "macro": "Mercado imobiliário, crédito e taxa Selic"
+    },
+    {
+      "id": "irrf",
+      "name": "IRRF",
+      "origin": "Município",
+      "risk": "Médio",
+      "macro": "Massa salarial e pagamentos municipais"
+    },
+    {
+      "id": "issqn",
+      "name": "ISSQN",
+      "origin": "Município",
+      "risk": "Médio",
+      "macro": "Atividade do setor de serviços e fiscalização tributária"
+    },
+    {
       "id": "fpm",
       "name": "FPM",
       "origin": "União",
@@ -98,6 +126,34 @@
     {
       "year": 2023,
       "month": 1,
+      "category": "iptu",
+      "value": 179249.96,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "category": "itbi",
+      "value": 70620.65,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "category": "irrf",
+      "value": 23454.88,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 1,
+      "category": "issqn",
+      "value": 596851.53,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 1,
       "category": "fpm",
       "value": 2914772.89,
       "status": "realizado"
@@ -184,6 +240,34 @@
       "month": 1,
       "category": "outras_est",
       "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "category": "iptu",
+      "value": 127178.95,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "category": "itbi",
+      "value": 200084.44,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "category": "irrf",
+      "value": 222794.45,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "category": "issqn",
+      "value": 567935.52,
       "status": "realizado"
     },
     {
@@ -280,6 +364,34 @@
     {
       "year": 2023,
       "month": 3,
+      "category": "iptu",
+      "value": 160067.37,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "category": "itbi",
+      "value": 110856.04,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "category": "irrf",
+      "value": 312402.05,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 3,
+      "category": "issqn",
+      "value": 587064.42,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 3,
       "category": "fpm",
       "value": 2377091.29,
       "status": "realizado"
@@ -366,6 +478,34 @@
       "month": 3,
       "category": "outras_est",
       "value": 47627.06,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "category": "iptu",
+      "value": 7795934.46,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "category": "itbi",
+      "value": 201770.36,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "category": "irrf",
+      "value": 204283.39,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 4,
+      "category": "issqn",
+      "value": 744517.22,
       "status": "realizado"
     },
     {
@@ -462,6 +602,34 @@
     {
       "year": 2023,
       "month": 5,
+      "category": "iptu",
+      "value": 1442623.32,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "category": "itbi",
+      "value": 141415.6,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "category": "irrf",
+      "value": 284082.51,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 5,
+      "category": "issqn",
+      "value": 612820.94,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 5,
       "category": "fpm",
       "value": 3021223.4,
       "status": "realizado"
@@ -548,6 +716,34 @@
       "month": 5,
       "category": "outras_est",
       "value": 30868.16,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "category": "iptu",
+      "value": 1373417.82,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "category": "itbi",
+      "value": 168425.43,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "category": "irrf",
+      "value": 307129.52,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 6,
+      "category": "issqn",
+      "value": 741074.24,
       "status": "realizado"
     },
     {
@@ -644,6 +840,34 @@
     {
       "year": 2023,
       "month": 7,
+      "category": "iptu",
+      "value": 1344794.29,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "category": "itbi",
+      "value": 268291.04,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "category": "irrf",
+      "value": 511421.1,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 7,
+      "category": "issqn",
+      "value": 608748.86,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 7,
       "category": "fpm",
       "value": 3876966.34,
       "status": "realizado"
@@ -730,6 +954,34 @@
       "month": 7,
       "category": "outras_est",
       "value": 19866.81,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "category": "iptu",
+      "value": 1392550.97,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "category": "itbi",
+      "value": 203695.85,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "category": "irrf",
+      "value": 124226.98,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 8,
+      "category": "issqn",
+      "value": 608020.59,
       "status": "realizado"
     },
     {
@@ -826,6 +1078,34 @@
     {
       "year": 2023,
       "month": 9,
+      "category": "iptu",
+      "value": 1373270.65,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "category": "itbi",
+      "value": 195460.61,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "category": "irrf",
+      "value": 1225033.69,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 9,
+      "category": "issqn",
+      "value": 645135.43,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 9,
       "category": "fpm",
       "value": 2543341.56,
       "status": "realizado"
@@ -912,6 +1192,34 @@
       "month": 9,
       "category": "outras_est",
       "value": 115872.92,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "category": "iptu",
+      "value": 1324702.67,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "category": "itbi",
+      "value": 169230.87,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "category": "irrf",
+      "value": 327170.37,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 10,
+      "category": "issqn",
+      "value": 656137.67,
       "status": "realizado"
     },
     {
@@ -1008,6 +1316,34 @@
     {
       "year": 2023,
       "month": 11,
+      "category": "iptu",
+      "value": 1307918.72,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "category": "itbi",
+      "value": 121741.56,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "category": "irrf",
+      "value": 360715.25,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 11,
+      "category": "issqn",
+      "value": 588576.19,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 11,
       "category": "fpm",
       "value": 2956946.05,
       "status": "realizado"
@@ -1094,6 +1430,34 @@
       "month": 11,
       "category": "outras_est",
       "value": 115872.92,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "category": "iptu",
+      "value": 1505346.09,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "category": "itbi",
+      "value": 207801.75,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "category": "irrf",
+      "value": 1095797.99,
+      "status": "realizado"
+    },
+    {
+      "year": 2023,
+      "month": 12,
+      "category": "issqn",
+      "value": 676376.19,
       "status": "realizado"
     },
     {
@@ -1190,6 +1554,34 @@
     {
       "year": 2024,
       "month": 1,
+      "category": "iptu",
+      "value": 242144.37,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "category": "itbi",
+      "value": 98142.54,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "category": "irrf",
+      "value": 62962.96,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 1,
+      "category": "issqn",
+      "value": 582813.25,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 1,
       "category": "fpm",
       "value": 3245724.51,
       "status": "realizado"
@@ -1276,6 +1668,34 @@
       "month": 1,
       "category": "outras_est",
       "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "category": "iptu",
+      "value": 172046.44,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "category": "itbi",
+      "value": 945629.75,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "category": "irrf",
+      "value": 333857.6,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 2,
+      "category": "issqn",
+      "value": 597336.49,
       "status": "realizado"
     },
     {
@@ -1372,6 +1792,34 @@
     {
       "year": 2024,
       "month": 3,
+      "category": "iptu",
+      "value": 4426971.08,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "category": "itbi",
+      "value": 367589.98,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "category": "irrf",
+      "value": 331001.55,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 3,
+      "category": "issqn",
+      "value": 430370.64,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 3,
       "category": "fpm",
       "value": 2751498.56,
       "status": "realizado"
@@ -1458,6 +1906,34 @@
       "month": 3,
       "category": "outras_est",
       "value": 47620.94,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "category": "iptu",
+      "value": 5591222.73,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "category": "itbi",
+      "value": 401176.2,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "category": "irrf",
+      "value": 453198.52,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 4,
+      "category": "issqn",
+      "value": 805450.84,
       "status": "realizado"
     },
     {
@@ -1554,6 +2030,34 @@
     {
       "year": 2024,
       "month": 5,
+      "category": "iptu",
+      "value": 1640266.7,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "category": "itbi",
+      "value": 261653.81,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "category": "irrf",
+      "value": 443582.65,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 5,
+      "category": "issqn",
+      "value": 670930.42,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 5,
       "category": "fpm",
       "value": 3357399.59,
       "status": "realizado"
@@ -1640,6 +2144,34 @@
       "month": 5,
       "category": "outras_est",
       "value": 24016.51,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "category": "iptu",
+      "value": 1469593.44,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "category": "itbi",
+      "value": 302421.55,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "category": "irrf",
+      "value": 395929.32,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 6,
+      "category": "issqn",
+      "value": 574966.57,
       "status": "realizado"
     },
     {
@@ -1736,6 +2268,34 @@
     {
       "year": 2024,
       "month": 7,
+      "category": "iptu",
+      "value": 1480565.18,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "category": "itbi",
+      "value": 409614.26,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "category": "irrf",
+      "value": 757928.88,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 7,
+      "category": "issqn",
+      "value": 625068.83,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 7,
       "category": "fpm",
       "value": 4299173.85,
       "status": "realizado"
@@ -1822,6 +2382,34 @@
       "month": 7,
       "category": "outras_est",
       "value": 31425.73,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "category": "iptu",
+      "value": 1546141.65,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "category": "itbi",
+      "value": 717559.07,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "category": "irrf",
+      "value": 139116.91,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 8,
+      "category": "issqn",
+      "value": 745782.95,
       "status": "realizado"
     },
     {
@@ -1918,6 +2506,34 @@
     {
       "year": 2024,
       "month": 9,
+      "category": "iptu",
+      "value": 1445544.96,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "category": "itbi",
+      "value": 182640.96,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "category": "irrf",
+      "value": 408679.6,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 9,
+      "category": "issqn",
+      "value": 659171.69,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 9,
       "category": "fpm",
       "value": 3353778.84,
       "status": "realizado"
@@ -2004,6 +2620,34 @@
       "month": 9,
       "category": "outras_est",
       "value": 856100.28,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "category": "iptu",
+      "value": 1597473.06,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "category": "itbi",
+      "value": 178404.52,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "category": "irrf",
+      "value": 1242422.38,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 10,
+      "category": "issqn",
+      "value": 748430.16,
       "status": "realizado"
     },
     {
@@ -2100,6 +2744,34 @@
     {
       "year": 2024,
       "month": 11,
+      "category": "iptu",
+      "value": 1555059.3,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "category": "itbi",
+      "value": 128191.11,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "category": "irrf",
+      "value": 450229.02,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 11,
+      "category": "issqn",
+      "value": 712457.58,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 11,
       "category": "fpm",
       "value": 3407574.8,
       "status": "realizado"
@@ -2186,6 +2858,34 @@
       "month": 11,
       "category": "outras_est",
       "value": 719950.93,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "category": "iptu",
+      "value": 1795225.75,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "category": "itbi",
+      "value": 448782.29,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "category": "irrf",
+      "value": 1270510.99,
+      "status": "realizado"
+    },
+    {
+      "year": 2024,
+      "month": 12,
+      "category": "issqn",
+      "value": 774041.03,
       "status": "realizado"
     },
     {
@@ -2282,6 +2982,34 @@
     {
       "year": 2025,
       "month": 1,
+      "category": "iptu",
+      "value": 202852.32,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "category": "itbi",
+      "value": 494044.23,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "category": "irrf",
+      "value": 68864.75,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 1,
+      "category": "issqn",
+      "value": 694647.14,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 1,
       "category": "fpm",
       "value": 3447701.45,
       "status": "realizado"
@@ -2368,6 +3096,34 @@
       "month": 1,
       "category": "outras_est",
       "value": 19560.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "category": "iptu",
+      "value": 222815.4,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "category": "itbi",
+      "value": 709562.86,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "category": "irrf",
+      "value": 1277609.97,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "category": "issqn",
+      "value": 651589.22,
       "status": "realizado"
     },
     {
@@ -2464,6 +3220,34 @@
     {
       "year": 2025,
       "month": 3,
+      "category": "iptu",
+      "value": 8547732.32,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "category": "itbi",
+      "value": 281703.94,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "category": "irrf",
+      "value": 67747.77,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "category": "issqn",
+      "value": 713794.59,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 3,
       "category": "fpm",
       "value": 3046989.33,
       "status": "realizado"
@@ -2550,6 +3334,34 @@
       "month": 3,
       "category": "outras_est",
       "value": 0.0,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "category": "iptu",
+      "value": 2158070.92,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "category": "itbi",
+      "value": 207252.34,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "category": "irrf",
+      "value": 427161.78,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "category": "issqn",
+      "value": 645102.84,
       "status": "realizado"
     },
     {
@@ -2646,6 +3458,34 @@
     {
       "year": 2025,
       "month": 5,
+      "category": "iptu",
+      "value": 1732906.98,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "category": "itbi",
+      "value": 206788.1,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "category": "irrf",
+      "value": 483716.15,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "category": "issqn",
+      "value": 728325.6,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 5,
       "category": "fpm",
       "value": 3949356.14,
       "status": "realizado"
@@ -2732,6 +3572,34 @@
       "month": 5,
       "category": "outras_est",
       "value": 727915.31,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "category": "iptu",
+      "value": 1580542.1,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "category": "itbi",
+      "value": 278224.66,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "category": "irrf",
+      "value": 447298.88,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "category": "issqn",
+      "value": 757350.25,
       "status": "realizado"
     },
     {
@@ -2828,6 +3696,34 @@
     {
       "year": 2025,
       "month": 7,
+      "category": "iptu",
+      "value": 1702499.4,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "category": "itbi",
+      "value": 469367.16,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "category": "irrf",
+      "value": 538272.52,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "category": "issqn",
+      "value": 689137.79,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 7,
       "category": "fpm",
       "value": 4707044.89,
       "status": "realizado"
@@ -2914,6 +3810,34 @@
       "month": 7,
       "category": "outras_est",
       "value": 15873.61,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "category": "iptu",
+      "value": 1687374.25,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "category": "itbi",
+      "value": 267595.84,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "category": "irrf",
+      "value": 451417.21,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "category": "issqn",
+      "value": 780869.78,
       "status": "realizado"
     },
     {
@@ -3010,6 +3934,34 @@
     {
       "year": 2025,
       "month": 9,
+      "category": "iptu",
+      "value": 1556459.1,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "category": "itbi",
+      "value": 213423.42,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "category": "irrf",
+      "value": 766790.95,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "category": "issqn",
+      "value": 754583.77,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 9,
       "category": "fpm",
       "value": 4884633.38,
       "status": "realizado"
@@ -3096,6 +4048,34 @@
       "month": 9,
       "category": "outras_est",
       "value": 936145.32,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "category": "iptu",
+      "value": 1630294.51,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "category": "itbi",
+      "value": 178390.88,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "category": "irrf",
+      "value": 517600.73,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "category": "issqn",
+      "value": 886964.17,
       "status": "realizado"
     },
     {
@@ -3192,6 +4172,34 @@
     {
       "year": 2025,
       "month": 11,
+      "category": "iptu",
+      "value": 1580756.53,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "category": "itbi",
+      "value": 202379.74,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "category": "irrf",
+      "value": 479425.54,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "category": "issqn",
+      "value": 921580.85,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 11,
       "category": "fpm",
       "value": 3800982.61,
       "status": "realizado"
@@ -3278,6 +4286,34 @@
       "month": 11,
       "category": "outras_est",
       "value": 58229.49,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "category": "iptu",
+      "value": 1861500.31,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "category": "itbi",
+      "value": 652638.21,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "category": "irrf",
+      "value": 2520321.48,
+      "status": "realizado"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "category": "issqn",
+      "value": 905583.97,
       "status": "realizado"
     },
     {
@@ -3374,6 +4410,34 @@
     {
       "year": 2026,
       "month": 1,
+      "category": "iptu",
+      "value": 2508265.73,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "category": "itbi",
+      "value": 187601.1,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "category": "irrf",
+      "value": 401259.57,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "category": "issqn",
+      "value": 825825.98,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 1,
       "category": "fpm",
       "value": 3981308.28,
       "status": "realizado"
@@ -3465,6 +4529,34 @@
     {
       "year": 2026,
       "month": 2,
+      "category": "iptu",
+      "value": 2508265.73,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "category": "itbi",
+      "value": 187601.1,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "category": "irrf",
+      "value": 401259.57,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "category": "issqn",
+      "value": 825825.98,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 2,
       "category": "fpm",
       "value": 3981308.28,
       "status": "realizado"
@@ -3556,6 +4648,34 @@
     {
       "year": 2026,
       "month": 3,
+      "category": "iptu",
+      "value": 2508265.73,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 3,
+      "category": "itbi",
+      "value": 187601.1,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 3,
+      "category": "irrf",
+      "value": 401259.57,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 3,
+      "category": "issqn",
+      "value": 825825.98,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 3,
       "category": "fpm",
       "value": 3981308.28,
       "status": "realizado"
@@ -3647,6 +4767,34 @@
     {
       "year": 2026,
       "month": 4,
+      "category": "iptu",
+      "value": 2508265.73,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 4,
+      "category": "itbi",
+      "value": 187601.1,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 4,
+      "category": "irrf",
+      "value": 401259.57,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 4,
+      "category": "issqn",
+      "value": 825825.98,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 4,
       "category": "fpm",
       "value": 3981308.28,
       "status": "realizado"
@@ -3738,6 +4886,34 @@
     {
       "year": 2026,
       "month": 5,
+      "category": "iptu",
+      "value": 2508265.73,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "category": "itbi",
+      "value": 187601.1,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "category": "irrf",
+      "value": 401259.57,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "category": "issqn",
+      "value": 825825.98,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 5,
       "category": "fpm",
       "value": 3981308.28,
       "status": "realizado"
@@ -3824,6 +5000,34 @@
       "month": 5,
       "category": "outras_est",
       "value": 271065.31,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "category": "iptu",
+      "value": 2508265.73,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "category": "itbi",
+      "value": 187601.1,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "category": "irrf",
+      "value": 401259.57,
+      "status": "realizado"
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "category": "issqn",
+      "value": 825825.98,
       "status": "realizado"
     },
     {
@@ -25678,6 +26882,10 @@
   ],
   "defaults": {
     "pessimista": {
+      "iptu": 2,
+      "itbi": -5,
+      "irrf": 0,
+      "issqn": -4,
       "fpm": -3,
       "icms": -5,
       "ipva": -2,
@@ -25687,6 +26895,10 @@
       "default": -2
     },
     "realista": {
+      "iptu": 5,
+      "itbi": 3,
+      "irrf": 4,
+      "issqn": 4,
       "fpm": 4,
       "icms": 3,
       "ipva": 5,
@@ -25696,6 +26908,10 @@
       "default": 3
     },
     "otimista": {
+      "iptu": 8,
+      "itbi": 8,
+      "irrf": 7,
+      "issqn": 8,
       "fpm": 8,
       "icms": 7,
       "ipva": 8,
