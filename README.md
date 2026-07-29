@@ -6,6 +6,10 @@ Além do painel executivo, o sistema contém um explorador com fragmentação po
 rubrica, código contábil, origem, aplicação e órgão. Qualquer receita pode ser
 adicionada a um estudo personalizado, com comparativos anuais e mensais.
 
+A aba **Base completa** preserva as colunas originais dos CSVs, permite combinar
+filtros sobre qualquer campo, ordenar, paginar, escolher colunas e exportar o
+resultado filtrado para CSV.
+
 ## Executar
 
 ```powershell

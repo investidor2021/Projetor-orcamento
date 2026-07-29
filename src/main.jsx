@@ -4,7 +4,7 @@ import {
   AlertTriangle, ArrowDownRight, ArrowUpRight, BarChart3, Building2, CheckCircle2,
   ChevronDown, CircleDollarSign, Download, FileText, Gauge, Info, Landmark,
   Layers3, Menu, Plus, RefreshCw, Search, ShieldAlert, SlidersHorizontal, Target,
-  Trash2, TrendingUp, X
+  TableProperties, Trash2, TrendingUp, X
 } from "lucide-react";
 import {
   Area, AreaChart, Bar, BarChart, CartesianGrid, Cell, ComposedChart, Legend,
@@ -95,7 +95,8 @@ function App() {
   const nav = [
     ["visao","Visão executiva",Gauge], ["historico","Histórico",BarChart3],
     ["cenarios","Cenários 2027",SlidersHorizontal], ["risco","Risco & alertas",ShieldAlert],
-    ["detalhes","Receitas detalhadas",Layers3], ["estudos",`Meus estudos${study.length?` (${study.length})`:""}`,Search],
+    ["detalhes","Receitas detalhadas",Layers3], ["base","Base completa",TableProperties],
+    ["estudos",`Meus estudos${study.length?` (${study.length})`:""}`,Search],
     ["metodo","Metodologia",FileText]
   ];
 
@@ -124,10 +125,73 @@ function App() {
       {tab==="cenarios" && <Scenarios model={model} rates={rates} setRates={setRates} scenario={scenario} setScenario={setScenario}/>}
       {tab==="risco" && <Risk model={model}/>}
       {tab==="detalhes" && <Detailed data={data} study={study} setStudy={setStudy} setTab={setTab}/>}
+      {tab==="base" && <FullDatabase data={data}/>}
       {tab==="estudos" && <Studies data={data} study={study} setStudy={setStudy} setTab={setTab}/>}
       {tab==="metodo" && <Method data={data}/>}
     </main>
   </div>;
+}
+
+function FullDatabase({data}) {
+  const defaultColumns=["year","monthName","agency","resourceSource","category","account","value","sourceFile"];
+  const [visible,setVisible]=useState(defaultColumns);
+  const [query,setQuery]=useState("");
+  const [year,setYear]=useState("Todos");
+  const [filters,setFilters]=useState([]);
+  const [filterColumn,setFilterColumn]=useState("agency");
+  const [filterValue,setFilterValue]=useState("");
+  const [sort,setSort]=useState({key:"year",direction:"desc"});
+  const [page,setPage]=useState(1);
+  const pageSize=50;
+  const columns=Object.fromEntries(data.rawColumns.map(c=>[c.key,c]));
+  const searchable=data.rawColumns.map(c=>c.key);
+  const rows=useMemo(()=>{
+    const q=query.trim().toLowerCase();
+    const filtered=data.rawRecords.filter(row=>{
+      if(year!=="Todos"&&row.year!==+year) return false;
+      if(q&&!searchable.some(key=>String(row[key]??"").toLowerCase().includes(q))) return false;
+      return filters.every(f=>String(row[f.key]??"").toLowerCase().includes(f.value.toLowerCase()));
+    });
+    return filtered.sort((a,b)=>{
+      const av=a[sort.key]??"", bv=b[sort.key]??"";
+      const result=typeof av==="number"&&typeof bv==="number"?av-bv:String(av).localeCompare(String(bv),"pt-BR");
+      return sort.direction==="asc"?result:-result;
+    });
+  },[data,query,year,filters,sort]);
+  useEffect(()=>setPage(1),[query,year,filters,visible]);
+  const pages=Math.max(1,Math.ceil(rows.length/pageSize));
+  const shown=rows.slice((page-1)*pageSize,page*pageSize);
+  const total=rows.reduce((a,r)=>a+(Number(r.value)||0),0);
+  const addFilter=()=>{if(!filterValue.trim())return;setFilters(f=>[...f,{key:filterColumn,value:filterValue.trim()}]);setFilterValue("")};
+  const toggleColumn=key=>setVisible(v=>v.includes(key)?v.filter(x=>x!==key):[...v,key]);
+  const changeSort=key=>setSort(s=>({key,direction:s.key===key&&s.direction==="asc"?"desc":"asc"}));
+  const exportRows=()=>{
+    const escape=v=>`"${String(v??"").replaceAll('"','""')}"`;
+    const header=visible.map(k=>escape(columns[k].label)).join(";");
+    const body=rows.map(r=>visible.map(k=>escape(r[k])).join(";")).join("\r\n");
+    const blob=new Blob(["\ufeff",header,"\r\n",body],{type:"text/csv;charset=utf-8"});
+    const url=URL.createObjectURL(blob);const link=document.createElement("a");link.href=url;link.download=`base-receitas-filtrada-${new Date().toISOString().slice(0,10)}.csv`;link.click();URL.revokeObjectURL(url);
+  };
+  return <div className="page">
+    <div className="database-hero"><div><span>BASE ANALÍTICA INTEGRAL</span><h2>Planilha de receitas</h2><p>{data.rawRecords.length.toLocaleString("pt-BR")} registros importados dos arquivos originais, com códigos e dimensões preservados.</p></div><button onClick={exportRows}><Download/> Exportar filtrado</button></div>
+    <div className="database-kpis"><Kpi label="Linhas filtradas" value={rows.length.toLocaleString("pt-BR")} note={`de ${data.rawRecords.length.toLocaleString("pt-BR")} registros`}/><Kpi label="Valor arrecadado" value={brl.format(total)} note="soma das linhas filtradas"/><Kpi label="Colunas disponíveis" value={String(data.rawColumns.length)} note={`${visible.length} visíveis na grade`}/></div>
+    <Card title="Filtros da base" subtitle="Combine qualquer coluna do CSV; todos os filtros são cumulativos">
+      <div className="database-toolbar">
+        <label className="searchbox"><Search/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Pesquisar em todas as colunas..."/></label>
+        <select value={year} onChange={e=>setYear(e.target.value)}><option>Todos</option>{[2023,2024,2025,2026].map(y=><option key={y}>{y}</option>)}</select>
+        <select value={filterColumn} onChange={e=>setFilterColumn(e.target.value)}>{data.rawColumns.map(c=><option value={c.key} key={c.key}>{c.label}</option>)}</select>
+        <input value={filterValue} onChange={e=>setFilterValue(e.target.value)} onKeyDown={e=>e.key==="Enter"&&addFilter()} placeholder="Valor do filtro"/>
+        <button onClick={addFilter}><Plus/> Adicionar</button>
+        <details className="column-picker"><summary><TableProperties/> Colunas</summary><div>{data.rawColumns.map(c=><label key={c.key}><input type="checkbox" checked={visible.includes(c.key)} onChange={()=>toggleColumn(c.key)}/>{c.label}</label>)}</div></details>
+      </div>
+      <div className="filter-chips">{filters.map((f,i)=><button key={`${f.key}-${i}`} onClick={()=>setFilters(old=>old.filter((_,idx)=>idx!==i))}><span>{columns[f.key].label}:</span> {f.value}<X/></button>)}{filters.length>0&&<button className="clear-filters" onClick={()=>setFilters([])}>Limpar filtros</button>}</div>
+    </Card>
+    <section className="sheet-card">
+      <div className="sheet-meta"><span>Exibindo {(page-1)*pageSize+1}–{Math.min(page*pageSize,rows.length)} de {rows.length.toLocaleString("pt-BR")}</span><span>Clique no cabeçalho para ordenar</span></div>
+      <div className="sheet-wrap"><table><thead><tr>{visible.map(key=><th key={key} onClick={()=>changeSort(key)} className={sort.key===key?"sorted":""}>{columns[key].label}<small>{sort.key===key?(sort.direction==="asc"?"↑":"↓"):""}</small></th>)}</tr></thead><tbody>{shown.map((row,idx)=><tr key={`${row.sourceFile}-${(page-1)*pageSize+idx}`}>{visible.map(key=><td key={key} className={columns[key].type==="currency"?"numeric":""}>{columns[key].type==="currency"&&row[key]!=null?brl.format(row[key]):String(row[key]??"")}</td>)}</tr>)}</tbody></table></div>
+      <div className="pagination"><button disabled={page===1} onClick={()=>setPage(p=>p-1)}>Anterior</button><span>Página <strong>{page}</strong> de {pages}</span><button disabled={page===pages} onClick={()=>setPage(p=>p+1)}>Próxima</button></div>
+    </section>
+  </div>
 }
 
 function Detailed({data,study,setStudy,setTab}) {

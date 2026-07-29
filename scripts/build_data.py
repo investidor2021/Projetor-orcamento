@@ -15,6 +15,12 @@ CATEGORIES = [
     {"id": "itbi", "name": "ITBI", "origin": "Município", "risk": "Alto", "macro": "Mercado imobiliário, crédito e taxa Selic"},
     {"id": "irrf", "name": "IRRF", "origin": "Município", "risk": "Médio", "macro": "Massa salarial e pagamentos municipais"},
     {"id": "issqn", "name": "ISSQN", "origin": "Município", "risk": "Médio", "macro": "Atividade do setor de serviços e fiscalização tributária"},
+    {"id": "taxas", "name": "Taxas", "origin": "Município", "risk": "Baixo", "macro": "Fiscalização, prestação de serviços e atualização tarifária"},
+    {"id": "contrib_melhoria", "name": "Contribuição de Melhoria", "origin": "Município", "risk": "Alto", "macro": "Execução de obras e lançamento tributário"},
+    {"id": "contribuicoes", "name": "Contribuições", "origin": "Município", "risk": "Baixo", "macro": "Custeio de iluminação e contribuições vinculadas"},
+    {"id": "patrimonial", "name": "Receita Patrimonial", "origin": "Município", "risk": "Médio", "macro": "Taxa Selic, aplicações financeiras e exploração patrimonial"},
+    {"id": "servicos", "name": "Receita de Serviços", "origin": "Município", "risk": "Médio", "macro": "Demanda pelos serviços públicos e atualização tarifária"},
+    {"id": "outras_correntes", "name": "Outras Receitas Correntes", "origin": "Município", "risk": "Alto", "macro": "Multas, restituições, ressarcimentos e receitas diversas"},
     {"id": "fpm", "name": "FPM", "origin": "União", "risk": "Médio", "macro": "PIB nacional e arrecadação de IR/IPI"},
     {"id": "itr", "name": "ITR", "origin": "União", "risk": "Médio", "macro": "Atividade agropecuária e valores de terra"},
     {"id": "comp_fin", "name": "Compensações Financeiras", "origin": "União", "risk": "Alto", "macro": "Produção e preços de recursos naturais"},
@@ -47,6 +53,18 @@ def classify(code, desc):
         return "irrf"
     if c.startswith("111451"):
         return "issqn"
+    if c.startswith("112"):
+        return "taxas"
+    if c.startswith("113"):
+        return "contrib_melhoria"
+    if c.startswith("12"):
+        return "contribuicoes"
+    if c.startswith("13"):
+        return "patrimonial"
+    if c.startswith("16"):
+        return "servicos"
+    if c.startswith("19"):
+        return "outras_correntes"
     # Deduções do Fundeb precisam retornar à receita-base para apuração líquida.
     if c.startswith("9517115") and "FPM" in d:
         return "fpm"
@@ -175,6 +193,81 @@ def parse_detailed_csv(path, item_map, record_map):
             record_map[(int(row["ano_exercicio"]), int(row["mes_referencia"]), item_id)] += amount
 
 
+RAW_COLUMNS = [
+    {"key": "recordId", "label": "ID do lançamento", "type": "text"},
+    {"key": "year", "label": "Ano", "type": "number"},
+    {"key": "month", "label": "Mês", "type": "number"},
+    {"key": "monthName", "label": "Mês por extenso", "type": "text"},
+    {"key": "municipality", "label": "Município", "type": "text"},
+    {"key": "agency", "label": "Órgão", "type": "text"},
+    {"key": "power", "label": "Poder", "type": "text"},
+    {"key": "resourceSource", "label": "Fonte de recurso", "type": "text"},
+    {"key": "appFixed", "label": "Aplicação fixa", "type": "text"},
+    {"key": "appVariable", "label": "Aplicação variável", "type": "text"},
+    {"key": "category", "label": "Categoria", "type": "text"},
+    {"key": "subcategory", "label": "Subcategoria", "type": "text"},
+    {"key": "source", "label": "Fonte", "type": "text"},
+    {"key": "level1", "label": "Desdobramento 1", "type": "text"},
+    {"key": "level2", "label": "Desdobramento 2", "type": "text"},
+    {"key": "level3", "label": "Desdobramento 3", "type": "text"},
+    {"key": "account", "label": "Natureza da receita", "type": "text"},
+    {"key": "code", "label": "Código contábil", "type": "text"},
+    {"key": "value", "label": "Valor arrecadado", "type": "currency"},
+    {"key": "budget", "label": "Valor orçado", "type": "currency"},
+    {"key": "periodValue", "label": "Valor do período", "type": "currency"},
+    {"key": "level", "label": "Nível", "type": "number"},
+    {"key": "sourceFile", "label": "Arquivo de origem", "type": "text"},
+]
+
+
+def parse_raw_csv(path):
+    rows = []
+    with path.open("r", encoding="latin-1", newline="") as fh:
+        for row in csv.DictReader(fh, delimiter=";"):
+            code = row["ds_tipo"].split(" - ", 1)[0].strip()
+            rows.append({
+                "recordId": row["id_rec_arrec_detalhe"],
+                "year": int(row["ano_exercicio"]), "month": int(row["mes_referencia"]),
+                "monthName": row["mes_ref_extenso"], "municipality": row["ds_municipio"],
+                "agency": row["ds_orgao"], "power": row["ds_poder"],
+                "resourceSource": row["ds_fonte_recurso"], "appFixed": row["ds_cd_aplicacao_fixo"],
+                "appVariable": row["ds_cd_aplicacao_variavel"], "category": row["ds_categoria"],
+                "subcategory": row["ds_subcategoria"], "source": row["ds_fonte"],
+                "level1": row["ds_d1"], "level2": row["ds_dd2"], "level3": row["ds_d3"],
+                "account": row["ds_tipo"], "code": code,
+                "value": round(float(row["vl_arrecadacao"].replace(".", "").replace(",", ".")), 2),
+                "budget": None, "periodValue": None, "level": None, "sourceFile": path.name,
+            })
+    return rows
+
+
+def parse_raw_2026(path):
+    rows = []
+    if not path.exists():
+        return rows
+    with path.open("r", encoding="latin-1", newline="") as fh:
+        for row in csv.DictReader(fh, delimiter=";"):
+            prefix = "balanceteReceitaReportVO."
+            get = lambda key: row.get(prefix + key, "")
+            def number(key):
+                raw = (get(key) or "").replace(".", "").replace(",", ".")
+                return float(raw) if raw else None
+            code = get("codigoCompleto")
+            rows.append({
+                "recordId": "",
+                "year": 2026, "month": 0, "monthName": "Acumulado", "municipality": "Vargem Grande do Sul",
+                "agency": "", "power": "", "resourceSource": get("nomeFonte"),
+                "appFixed": " - ".join(filter(None, (get("codigoCaFixo"), get("nomeCaFixo")))),
+                "appVariable": " - ".join(filter(None, (get("codigoCaVariavel"), get("nomeCaVariavel")))),
+                "category": get("tipo"), "subcategory": get("tipoNatureza"), "source": get("nomeFonte"),
+                "level1": "", "level2": "", "level3": "", "account": get("nomeReceita"),
+                "code": code, "value": number("valorAcumulado"), "budget": number("orcado"),
+                "periodValue": number("valorPeriodo"), "level": int(get("nivel")) if get("nivel") else None,
+                "sourceFile": path.name,
+            })
+    return rows
+
+
 def br_number(raw):
     return float(raw.replace(".", "").replace(",", "."))
 
@@ -194,6 +287,12 @@ def parse_pdf(path):
         "itbi": pdf_value(text, r"1\.1\.1\.2\.53\.0\.0\."),
         "irrf": pdf_value(text, r"1\.1\.1\.3\.03\.0\.0\."),
         "issqn": pdf_value(text, r"1\.1\.1\.4\.51\.0\.0\."),
+        "taxas": pdf_value(text, r"1\.1\.2\.0\.00\.0\.0\."),
+        "contrib_melhoria": pdf_value(text, r"1\.1\.3\.0\.00\.0\.0\."),
+        "contribuicoes": pdf_value(text, r"1\.2\.0\.0\.00\.0\.0\."),
+        "patrimonial": pdf_value(text, r"1\.3\.0\.0\.00\.0\.0\."),
+        "servicos": pdf_value(text, r"1\.6\.0\.0\.00\.0\.0\."),
+        "outras_correntes": pdf_value(text, r"1\.9\.0\.0\.00\.0\.0\."),
         "fpm": pdf_value(text, r"1\.7\.1\.1\.51\."),
         "itr": pdf_value(text, r"1\.7\.1\.1\.52\."),
         "sus": pdf_value(text, r"1\.7\.1\.3\.50\."),
@@ -226,11 +325,13 @@ def main():
     records = []
     detailed_items = {}
     detailed_records = defaultdict(float)
+    raw_records = []
     source_notes = []
     for year in (2023, 2024, 2025):
         path = ROOT / f"receitas-vargem-grande-do-sul-{year}.csv"
         monthly, details = parse_csv(path)
         parse_detailed_csv(path, detailed_items, detailed_records)
+        raw_records.extend(parse_raw_csv(path))
         for month in range(1, 13):
             for cat in CATEGORIES:
                 records.append({"year": year, "month": month, "category": cat["id"], "value": round(monthly[month][cat["id"]], 2), "status": "realizado"})
@@ -242,6 +343,8 @@ def main():
         for cat in CATEGORIES:
             records.append({"year": 2026, "month": month, "category": cat["id"], "value": round(pdf_vals.get(cat["id"], 0) / 6, 2), "status": "realizado"})
     source_notes.append({"year": 2026, "file": "ATE JUN 26.pdf", "coverage": "jan-jun", "method": "totais acumulados do balancete; rateio mensal uniforme apenas para visualização"})
+    raw_records.extend(parse_raw_2026(ROOT / "balanceteReceita de 2026.csv"))
+    source_notes.append({"year": 2026, "file": "balanceteReceita de 2026.csv", "coverage": "acumulado", "method": "base hierárquica complementar disponível na grade completa; preserva níveis, orçamento e valores do período"})
 
     payload = {
         "municipality": "Vargem Grande do Sul",
@@ -253,6 +356,8 @@ def main():
             {"year": y, "month": m, "item": item, "value": round(value, 2)}
             for (y, m, item), value in detailed_records.items()
         ],
+        "rawColumns": RAW_COLUMNS,
+        "rawRecords": raw_records,
         "sources": source_notes,
         "missingYears": [2022],
         "defaults": {
